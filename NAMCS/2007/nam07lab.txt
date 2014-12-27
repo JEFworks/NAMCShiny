@@ -1,0 +1,934 @@
+          /*
+SAS CODEBOOK FOR 2007 NAMCS PUBLIC USE FILE
+INCLUDES VARIABLE LABELS AND FORMAT ASSIGNMENTS
+          */            
+                                           
+LABEL
+VMONTH="Month of Visit"
+VYEAR="Year of Visit"
+VDAYR="Day of Week of Visit"
+AGE="Patient age in years"
+SEX="Patient Sex"
+ETHIM="Patient Ethnicity (imputed)"
+ETHUN="Patient Ethnicity (unimputed)"
+RACEIM="Patient Race (imputed)"
+RACEUN="Patient Race (unimputed)"
+USETOBAC="Tobacco use"
+PAYPRIV="Private insurance"
+PAYMCARE="Medicare"
+PAYMCAID="Medicaid"
+PAYWKCMP="Workers Compensation"
+PAYSELF="Self pay"
+PAYNOCHG="No charge"
+PAYOTH="Other"
+PAYDK="Unknown"
+PAYTYPE="Type of payment (primary, based on hierarchy)"
+INJDET="Is visit related to inj/poison/adverse effect?"
+INJURY="Is visit injury related? (recode)"
+RFV1="Reason for visit #1"
+RFV2="Reason for visit #2"
+RFV3="Reason for visit #3"
+RFV13D="Reason for visit #1 - 3 digit"
+RFV23D="Reason for visit #2 - 3 digit"
+RFV33D="Reason for visit #3 - 3 digit"
+PRIMCARE="Are you patient’s primary care physician?"
+REFER="Was patient referred for this visit?"
+SENBEFOR="Have you or anyone in practice seen patient before?"
+PASTVIS="If yes, how many visits in past 12 months?"
+MAJOR="Major reason for visit"
+DIAG1="Diagnosis #1 - actual"
+DIAG2="Diagnosis #2 - actual"
+DIAG3="Diagnosis #3 - actual"
+DIAG13D="Diagnosis #1 - 3 digit"
+DIAG23D="Diagnosis #2 - 3 digit"
+DIAG33D="Diagnosis #3 - 3 digit"
+PRDIAG1="For dx1, is this probable, questionable, or ruleout?"
+PRDIAG2="For dx2, is this probable, questionable, or ruleout?"
+PRDIAG3="For dx3, is this probable, questionable, or ruleout?"
+ARTHRTIS="Does patient now have: Arthritis"
+ASTHMA="Does patient now have: Asthma"
+CANCER="Does patient now have: Cancer"
+CASTAGE="Stage of patient's cancer"
+CEBVD="Does patient now have: Cerebrovascular disease"
+CHF="Does patient now have: CHF"
+CRF="Does patient now have: Chronic renal failure"
+COPD="Does patient now have: COPD"
+DEPRN="Does patient now have: Depression"
+DIABETES="Does patient now have: Diabetes"
+HYPLIPID="Does patient now have: Hyperlipidemia"
+HTN="Does patient now have: Hypertension"
+IHD="Does patient now have: Ischemic heart disease"
+OBESITY="Does patient now have: Obesity"
+OSTPRSIS="Does patient now have: Osteoporosis"
+NOCHRON="Does patient now have: None of the listed chronic conditions"
+TOTCHRON="Total number of chronic conditions"
+DMP="Status of patient enrollment in a disease management program"
+HTIN="Height in inches"
+WTLB="Weight in pounds"
+BMI="Body-Mass index - calculated from Height and Weight"
+TEMPF="Temperature (Farenheit)"
+BPSYS="Vital signs - Systolic blood pressure"
+BPDIAS="Vital signs - Diastolic blood pressure"
+DIAGSCRN="Were diagnostic services ordered or provided?"
+BREAST="Breast exam"
+PELVIC="Pelvic exam"
+RECTAL="Rectal exam"
+SKIN="Skin exam"
+DEPRESS="Depression screening"
+ANYIMAGE="Any imaging"
+XRAY="X-ray"
+BONEDENS="Bone mineral density"
+CATSCAN="CT Scan"
+ECHOCARD="Echocardiogram"
+OTHULTRA="Other ultrasound"
+MAMMO="Mammography"
+MRI="MRI"                                  
+PETSCAN="PET Scan"
+OTHIMAGE="Other imaging"
+CBC="CBC"
+ELECTROL="Electrolytes"
+GLUCOSE="Glucose"
+HGBA="HgbA1C"
+CHOLEST="Lipids/Cholesterol"
+PSA="PSA test"
+OTHERBLD="Other blood test"
+SCOPPROC="Scope procedure"
+SCOPEWI1="Scope write in #1"
+SCOPEWI2="Scope write in #2"
+SCPWI13D="Scope write in #1 - 3 digit"
+SCPWI23D="Scope write in #2 - 3 digit"
+SCPWI12D="Scope write in #1 - 2 digit"
+SCPWI22D="Scope write in #2 - 2 digit"
+SIGCOLON="Sigmoidoscopy/colonoscopy"
+BIOPSY="Biopsy"
+BIOPSYWI="Biopsy site"
+CHLAMYD="Chlamydia test"
+PAPCONV="Pap - Conventional"
+PAPLIQ="Pap - Liquid"
+PAPUNSP="Pap - Unspecified"
+PREGTEST="Pregnancy test"
+HPVDNA="HPV"
+EKG="EKG/ECG (electrocardiogram)"
+SPIRO="Spirometry/pulmonary function"
+URINE="Urinalysis"
+OTHDIAG="Other diagnostic/screening test/service"
+DIAGSC1="Diagnostic service #1"
+DIAGSC2="Diagnostic service #2"
+DIGSC13D="Diagnostic service #1 - 3 digit"
+DIGSC23D="Diagnostic service #2 - 3 digit"
+DIGSC12D="Diagnostic service #1 - 2 digit"
+DIGSC22D="Diagnostic service #2 - 2 digit"
+HTTAKE="Height measured"
+WTTAKE="Weight measured"
+TEMPTAKE="Temperature taken"
+BLODPRES="Blood pressure taken"
+TOTDIAG="Total diag/screening services ordered/provided"
+HEALTHED="Was health education ordered or provided?"
+ASTHMAED="Asthma education"
+DIETNUTR="Diet/nutrition"
+EXERCISE="Exercise"
+GRWTHDEV="Growth/development"
+INJPREV="Injury prevention"
+STRESMGT="Stress management"
+TOBACED="Tobacco use/Exposure"
+WTREDUC="Weight reduction"
+OTHLTHED="Other health education"
+TOTHLTED="Total health education ordered or provided"
+NONMED="Was non-medication therapy ordered/provided?"
+CAM="Complementary alternative medicine"
+DME="Durable medical equipment"
+HOMEHLTH="Home health care"
+HOSPICE="Hospice care"
+PT="Physical therapy"
+RADTHER="Radiation therapy"
+SPOCTHER="Speech/occupational therapy"
+PSYCHOTH="Psychotherapy"
+OTHMNTL="Other mental health counseling"
+EXCISION="Excision"
+ORTHO="Orthopedic care"
+WOUND="Wound care"
+OTHPROC="Other procedure"
+OTHPROC1="Procedure 1"
+OTHPROC2="Procedure 2"
+OTHPROC3="Procedure 3"
+OTHPROC4="Procedure 4"
+OTHPR13D="Procedure 1 - 3 digit"
+OTHPR23D="Procedure 2 - 3 digit"
+OTHPR33D="Procedure 3 - 3 digit"
+OTHPR43D="Procedure 4 - 3 digit"
+OTHPR12D="Procedure 1 - 2 digit"
+OTHPR22D="Procedure 2 - 2 digit"
+OTHPR32D="Procedure 3 - 2 digit"
+OTHPR42D="Procedure 4 - 2 digit"
+TOTNONMED="Total non-medication therapy ordered/provided"
+MED="Was medication ordered or provided?"
+MED1="Medication 1"
+MED2="Medication 2"
+MED3="Medication 3"
+MED4="Medication 4"
+MED5="Medication 5"
+MED6="Medication 6"
+MED7="Medication 7"
+MED8="Medication 8"
+NCMED1="Was medication 1 new or continued?"
+NCMED2="Was medication 2 new or continued?"
+NCMED3="Was medication 3 new or continued?"
+NCMED4="Was medication 4 new or continued?"
+NCMED5="Was medication 5 new or continued?"
+NCMED6="Was medication 6 new or continued?"
+NCMED7="Was medication 7 new or continued?"
+NCMED8="Was medication 8 new or continued?"
+NUMNEW="Number of new medications coded"
+NUMCONT="Number of continuing medications coded"
+NUMMED="Number of medications coded"
+NOPROVID="No answer to provider item"
+PHYS="Physician seen"
+PHYSASST="Physician assistant seen"
+NPNMW="Nurse pract/Midwife seen"
+RNLPN="RN/LPN seen"
+MHP="Mental health provider seen"
+OTHPROV="Other provider seen"
+NODISP="No answer to disposition item"
+NOFU="No follow up"
+RETPRN="Return PRN"
+REFOTHMD="Refer to other MD"
+RETAPPT="Return, appt."
+TELEPHON="Telephone follow up"
+REFERED="Refer to emergency department"
+ADMITHOS="Admit to hospital"
+OTHDISP="Other disposition"
+TIMEMD="Time spent with physician"
+PATWT="Patient visit weight"
+REGION="Geographic region"
+MSA="MSA or non-MSA area"
+SPEC="Physician specialty"
+MDDO="MD or DO"
+PHYCODE="Physician code"
+PATCODE="Patient code"
+BDATEFL="Birth date imputed?"
+SEXFL="Sex imputed?"
+ETHNICFL="Ethnicity imputed?"
+RACEFL="Race imputed?"
+SENBEFL="Seen before imputed?"
+PASTFL="Number of past visits imputed?"
+TIMEMDFL="Time spent with physician imputed?"
+DRUGID1="Medication #1 - Drug ID"
+PRESCR1="Prescription status code"
+CONTSUB1="Controlled status code"
+COMSTAT1="Composition status code"
+RX1CAT1="For RX1, MULTUM drug category #1 - detailed"
+RX1CAT2="For RX1, MULTUM drug category #2 - detailed"
+RX1CAT3="For RX1, MULTUM drug category #3 - detailed"
+RX1CAT4="For RX1, MULTUM drug category #4 - detailed"
+RX1V1C1="For RX1, level 1 of MULTUM drug category #1"
+RX1V1C2="For RX1, level 1 of MULTUM drug category #2"
+RX1V1C3="For RX1, level 1 of MULTUM drug category #3"
+RX1V1C4="For RX1, level 1 of MULTUM drug category #4"
+RX1V2C1="For RX1, level 2 of MULTUM drug category #1"
+RX1V2C2="For RX1, level 2 of MULTUM drug category #2"
+RX1V2C3="For RX1, level 2 of MULTUM drug category #3"
+RX1V2C4="For RX1, level 2 of MULTUM drug category #4"
+RX1V3C1="For RX1, level 3 of MULTUM drug category #1"
+RX1V3C2="For RX1, level 3 of MULTUM drug category #2"
+RX1V3C3="For RX1, level 3 of MULTUM drug category #3"
+RX1V3C4="For RX1, level 3 of MULTUM drug category #4"
+DRUGID2="Medication #2 - Drug ID"
+PRESCR2="Prescription status code"
+CONTSUB2="Controlled status code"
+COMSTAT2="Composition status code"
+RX2CAT1="For RX2, MULTUM drug category #1 - detailed"
+RX2CAT2="For RX2, MULTUM drug category #2 - detailed"
+RX2CAT3="For RX2, MULTUM drug category #3 - detailed"
+RX2CAT4="For RX2, MULTUM drug category #4 - detailed"
+RX2V1C1="For RX2, level 1 of MULTUM drug category #1"
+RX2V1C2="For RX2, level 1 of MULTUM drug category #2"
+RX2V1C3="For RX2, level 1 of MULTUM drug category #3"
+RX2V1C4="For RX2, level 1 of MULTUM drug category #4"
+RX2V2C1="For RX2, level 2 of MULTUM drug category #1"
+RX2V2C2="For RX2, level 2 of MULTUM drug category #2"
+RX2V2C3="For RX2, level 2 of MULTUM drug category #3"
+RX2V2C4="For RX2, level 2 of MULTUM drug category #4"
+RX2V3C1="For RX2, level 3 of MULTUM drug category #1"
+RX2V3C2="For RX2, level 3 of MULTUM drug category #2"
+RX2V3C3="For RX2, level 3 of MULTUM drug category #3"
+RX2V3C4="For RX2, level 3 of MULTUM drug category #4"
+DRUGID3="Medication #3 - Drug ID"
+PRESCR3="Prescription status code"
+CONTSUB3="Controlled status code"
+COMSTAT3="Composition status code"
+RX3CAT1="For RX3, MULTUM drug category #1 - detailed"
+RX3CAT2="For RX3, MULTUM drug category #2 - detailed"
+RX3CAT3="For RX3, MULTUM drug category #3 - detailed"
+RX3CAT4="For RX3, MULTUM drug category #4 - detailed"
+RX3V1C1="For RX3, level 1 of MULTUM drug category #1"
+RX3V1C2="For RX3, level 1 of MULTUM drug category #2"
+RX3V1C3="For RX3, level 1 of MULTUM drug category #3"
+RX3V1C4="For RX3, level 1 of MULTUM drug category #4"
+RX3V2C1="For RX3, level 2 of MULTUM drug category #1"
+RX3V2C2="For RX3, level 2 of MULTUM drug category #2"
+RX3V2C3="For RX3, level 2 of MULTUM drug category #3"
+RX3V2C4="For RX3, level 2 of MULTUM drug category #4"
+RX3V3C1="For RX3, level 3 of MULTUM drug category #1"
+RX3V3C2="For RX3, level 3 of MULTUM drug category #2"
+RX3V3C3="For RX3, level 3 of MULTUM drug category #3"
+RX3V3C4="For RX3, level 3 of MULTUM drug category #4"
+DRUGID4="Medication #4 - Drug ID"
+PRESCR4="Prescription status code"
+CONTSUB4="Controlled status code"
+COMSTAT4="Composition status code"
+RX4CAT1="For RX4, MULTUM drug category #1 - detailed"
+RX4CAT2="For RX4, MULTUM drug category #2 - detailed"
+RX4CAT3="For RX4, MULTUM drug category #3 - detailed"
+RX4CAT4="For RX4, MULTUM drug category #4 - detailed"
+RX4V1C1="For RX4, level 1 of MULTUM drug category #1"
+RX4V1C2="For RX4, level 1 of MULTUM drug category #2"
+RX4V1C3="For RX4, level 1 of MULTUM drug category #3"
+RX4V1C4="For RX4, level 1 of MULTUM drug category #4"
+RX4V2C1="For RX4, level 2 of MULTUM drug category #1"
+RX4V2C2="For RX4, level 2 of MULTUM drug category #2"
+RX4V2C3="For RX4, level 2 of MULTUM drug category #3"
+RX4V2C4="For RX4, level 2 of MULTUM drug category #4"
+RX4V3C1="For RX4, level 3 of MULTUM drug category #1"
+RX4V3C2="For RX4, level 3 of MULTUM drug category #2"
+RX4V3C3="For RX4, level 3 of MULTUM drug category #3"
+RX4V3C4="For RX4, level 3 of MULTUM drug category #4"
+DRUGID5="Medication #5 - Drug ID"
+PRESCR5="Prescription status code"
+CONTSUB5="Controlled status code"
+COMSTAT5="Composition status code"
+RX5CAT1="For RX5, MULTUM drug category #1 - detailed"
+RX5CAT2="For RX5, MULTUM drug category #2 - detailed"
+RX5CAT3="For RX5, MULTUM drug category #3 - detailed"
+RX5CAT4="For RX5, MULTUM drug category #4 - detailed"
+RX5V1C1="For RX5, level 1 of MULTUM drug category #1"
+RX5V1C2="For RX5, level 1 of MULTUM drug category #2"
+RX5V1C3="For RX5, level 1 of MULTUM drug category #3"
+RX5V1C4="For RX5, level 1 of MULTUM drug category #4"
+RX5V2C1="For RX5, level 2 of MULTUM drug category #1"
+RX5V2C2="For RX5, level 2 of MULTUM drug category #2"
+RX5V2C3="For RX5, level 2 of MULTUM drug category #3"
+RX5V2C4="For RX5, level 2 of MULTUM drug category #4"
+RX5V3C1="For RX5, level 3 of MULTUM drug category #1"
+RX5V3C2="For RX5, level 3 of MULTUM drug category #2"
+RX5V3C3="For RX5, level 3 of MULTUM drug category #3"
+RX5V3C4="For RX5, level 3 of MULTUM drug category #4"
+DRUGID6="Medication #6 - Drug ID"
+PRESCR6="Prescription status code"
+CONTSUB6="Controlled status code"
+COMSTAT6="Composition status code"
+RX6CAT1="For RX6, MULTUM drug category #1 - detailed"
+RX6CAT2="For RX6, MULTUM drug category #2 - detailed"
+RX6CAT3="For RX6, MULTUM drug category #3 - detailed"
+RX6CAT4="For RX6, MULTUM drug category #4 - detailed"
+RX6V1C1="For RX6, level 1 of MULTUM drug category #1"
+RX6V1C2="For RX6, level 1 of MULTUM drug category #2"
+RX6V1C3="For RX6, level 1 of MULTUM drug category #3"
+RX6V1C4="For RX6, level 1 of MULTUM drug category #4"
+RX6V2C1="For RX6, level 2 of MULTUM drug category #1"
+RX6V2C2="For RX6, level 2 of MULTUM drug category #2"
+RX6V2C3="For RX6, level 2 of MULTUM drug category #3"
+RX6V2C4="For RX6, level 2 of MULTUM drug category #4"
+RX6V3C1="For RX6, level 3 of MULTUM drug category #1"
+RX6V3C2="For RX6, level 3 of MULTUM drug category #2"
+RX6V3C3="For RX6, level 3 of MULTUM drug category #3"
+RX6V3C4="For RX6, level 3 of MULTUM drug category #4"
+DRUGID7="Medication #7 - Drug ID"
+PRESCR7="Prescription status code"
+CONTSUB7="Controlled status code"
+COMSTAT7="Composition status code"
+RX7CAT1="For RX7, MULTUM drug category #1 - detailed"
+RX7CAT2="For RX7, MULTUM drug category #2 - detailed"
+RX7CAT3="For RX7, MULTUM drug category #3 - detailed"
+RX7CAT4="For RX7, MULTUM drug category #4 - detailed"
+RX7V1C1="For RX7, level 1 of MULTUM drug category #1"
+RX7V1C2="For RX7, level 1 of MULTUM drug category #2"
+RX7V1C3="For RX7, level 1 of MULTUM drug category #3"
+RX7V1C4="For RX7, level 1 of MULTUM drug category #4"
+RX7V2C1="For RX7, level 2 of MULTUM drug category #1"
+RX7V2C2="For RX7, level 2 of MULTUM drug category #2"
+RX7V2C3="For RX7, level 2 of MULTUM drug category #3"
+RX7V2C4="For RX7, level 2 of MULTUM drug category #4"
+RX7V3C1="For RX7, level 3 of MULTUM drug category #1"
+RX7V3C2="For RX7, level 3 of MULTUM drug category #2"
+RX7V3C3="For RX7, level 3 of MULTUM drug category #3"
+RX7V3C4="For RX7, level 3 of MULTUM drug category #4"
+DRUGID8="Medication #8 - Drug ID"
+PRESCR8="Prescription status code"
+CONTSUB8="Controlled status code"
+COMSTAT8="Composition status code"
+RX8CAT1="For RX8, MULTUM drug category #1 - detailed"
+RX8CAT2="For RX8, MULTUM drug category #2 - detailed"
+RX8CAT3="For RX8, MULTUM drug category #3 - detailed"
+RX8CAT4="For RX8, MULTUM drug category #4 - detailed"
+RX8V1C1="For RX8, level 1 of MULTUM drug category #1"
+RX8V1C2="For RX8, level 1 of MULTUM drug category #2"
+RX8V1C3="For RX8, level 1 of MULTUM drug category #3"
+RX8V1C4="For RX8, level 1 of MULTUM drug category #4"
+RX8V2C1="For RX8, level 2 of MULTUM drug category #1"
+RX8V2C2="For RX8, level 2 of MULTUM drug category #2"
+RX8V2C3="For RX8, level 2 of MULTUM drug category #3"
+RX8V2C4="For RX8, level 2 of MULTUM drug category #4"
+RX8V3C1="For RX8, level 3 of MULTUM drug category #1"
+RX8V3C2="For RX8, level 3 of MULTUM drug category #2"
+RX8V3C3="For RX8, level 3 of MULTUM drug category #3"
+RX8V3C4="For RX8, level 3 of MULTUM drug category #4"
+RETYPOFF="Type of office setting"
+SOLO="Solo or group practice"
+EMPSTAT="Employment status of physician"
+OWNS="Who owns the practice?"
+LAB="Is lab testing performed at office?"
+PATEVEN="Does physician see pats in office evenings/weekends?"
+NHVISR="In last normal wk of prac, nursing home visits?"
+HOMVISR="In last normal wk of prac, other home visits?"
+HOSVISR="In last normal wk of prac, hospital visits?"
+TELCONR="In last normal wk of prac, telephone consults w/pats?"
+ECONR="In last normal wk of prac, email consults w/pats?"
+EBILLREC="Does your practice submit claims electronically?"
+EMEDREC="Does your practice use electronic medical records?"
+EDEMOG="Practice has computer system for pat demographic info?"
+EPROLST="If yes, does this include patient problem lists?"
+ECPOE="Practice has computer system for orders for prescrip?"
+EWARN="If yes, are there warnings of drug interact/contraind?"
+ESCRIP="If yes, are prescriptions sent electronically to pharm?"
+ECTOE="Practice has computer system for orders for tests?"
+EORDER="If yes, are orders sent electronically?"
+ERESULT="Practice has computer system for viewing lab results?"
+ERANGE="If yes, are out of range levels highlighted?"
+EIMGRES="Practice has computer system for viewing imaging results?"
+EIMAGE="If yes, are electronic images returned?"
+EPNOTES="Practice has computer system for clinical notes?"
+EHXFU="If yes, include medical history/follow-up notes?"
+EREMIND="Practice has comp sys for remind for interven/screening tests?"
+EPUBHLTH="Practice has computer system for public health reporting?"
+ENOTDIS="If yes, are notifiable diseases sent electronically?"
+EMRNEW="Plans to install new/replace old EMR system w/in 3 yrs?"
+PRMCARER="Percent of patient care revenue from Medicare"
+PRMAIDR="Percent of patient care revenue from Medicaid"
+PRPRVTR="Percent of patient care revenue from private insurance"
+PRPATR="Percent of patient care revenue from patient payment"
+PROTHR="Percent of patient care revenue from other sources"
+MANCAREC="How many managed care contracts does this practice have?"
+PRMANR="Percent of patient care revenue from managed care contracts"
+PCCPROD="For patient care compensation, is physician productivity taken into account?"
+PCCSAT="For patient care compensation, is patient satisfaction taken into account?"
+PCCQOC="For patient care compensation, is quality of care taken into account?"
+PCCPPROF="For patient care compensation, is practice profiling taken into account?"
+MEASPUB="Are performance measures on physician's practice available to public?"
+PRP4PR="Percent of patient care revenue from performance-based payments"
+REVFFSR="Percent of patient care revenue from fee-for-service"
+REVDISCR="Percent of patient care revenue from discounted fee-for-service"
+REVCAPR="Percent of patient care revenue from capitation"
+REVCASER="Percent of patient care revenue from case rates"
+REVOTHR="Percent of patient care revenue from other methods of payment"
+ACEPTNEW="Is physician accepting new patients?"
+CAPITATE="For new patients, accepts private capitated"
+NOCAP="For new patients, accepts private non-capitated"
+NMEDCARE="For new patients, accepts Medicare"
+NMEDCAID="For new patients, accepts Medicaid"
+NWORKCMP="For new patients, accepts Workers Comp"
+NSELFPAY="For new patients, accepts self-pay"
+NNOCHRGE="For new patients, accepts no charge"
+CCS="Does practice offer cervical cancer screening?"
+RACER="Race recode (imputed)"
+RACEETH="Race/Ethnicity (imputed)"
+SPECR="Physician specialty recode (15 groups)"
+SPECCAT="Physician specialty recode (3 groups)"
+AGEDAYS="Age in days for patients less than one year"
+AGER="Age recode"
+DIAG1R="Diagnosis #1 - numeric recode"
+DIAG2R="Diagnosis #2 - numeric recode"
+DIAG3R="Diagnosis #3 - numeric recode"
+SCOPWI1R="Scope write-in #1 numeric recode"
+SCOPWI2R="Scope write-in #2 numeric recode"
+BIOPSYWIR="Biopsy write-in numeric recode"
+DIAGSC1R="Other diag/screen serv #1 - numeric recode"
+DIAGSC2R="Other diag/screen serv #2 - numeric recode"
+OTHPROC1R="Procedure #1 - numeric recode"
+OTHPROC2R="Procedure #2 - numeric recode"
+OTHPROC3R="Procedure #3 - numeric recode"
+OTHPROC4R="Procedure #4 - numeric recode"
+WHOCOMP="Who completed the Patient Record forms?"
+SETTYPE="Setting type"
+YEAR="Year (2007)"
+CSTRATM="Clustered PSU stratum marker - masked"
+CPSUM="Clustered PSU marker - masked"
+PHYSWT="Physician weight"
+PCTPOVR="Percent poverty in patient's ZIP"
+HINCOMER="Median household income in patient's ZIP"
+PBAMORER="Percent pop w/Bachelor's Degree or higher in patient's ZIP"
+URBANRUR="Urban-rural classification of patient's ZIP"
+;
+
+
+FORMAT
+VMONTH VMONTHF.
+VDAYR VDAYRF.
+AGE AGEF.
+SEX SEXF.
+ETHIM ETHIMF.
+RACEIM RACEIMF.
+ETHUN ETHUNF.
+RACEUN RACEUNF.
+USETOBAC USETOBAF.
+PAYTYPE PAYTYPEF.
+RFV1
+RFV2
+RFV3 RFVF.
+RFV13D
+RFV23D
+RFV33D RFV3DF.
+PRIMCARE BYESNOUF.
+REFER REFERF.
+SENBEFOR SENBEFOF.
+PASTVIS PASTVISF.
+MAJOR MAJORF.
+INJDET INJDETF.
+INJURY INJURYF.
+DIAG1 
+DIAG2
+DIAG3 $DIAGF.
+DIAG13D
+DIAG23D
+DIAG33D $DIAG3DF.
+PRDIAG1 
+PRDIAG2
+PRDIAG3 PRDIAGF.
+WTLB WTLBF.
+HTIN HTINF.
+DIAGSCRN 
+NOCHRON
+HEALTHED
+NONMED
+MED
+DIAGSCRF.
+DMP DMPF.
+ARTHRTIS
+ASTHMA
+CANCER
+CHF
+CRF
+COPD
+CEBVD
+HYPLIPID
+DEPRN
+DIABETES
+HTN
+IHD
+OBESITY
+OSTPRSIS
+PAYPRIV
+PAYMCARE
+PAYMCAID
+PAYWKCMP
+PAYSELF
+PAYNOCHG
+PAYOTH
+PAYDK
+BREAST
+PELVIC
+RECTAL
+SKIN
+DEPRESS
+ANYIMAGE
+XRAY
+BONEDENS
+CATSCAN
+ECHOCARD
+OTHULTRA
+MAMMO
+MRI
+PETSCAN
+OTHIMAGE
+CBC
+ELECTROL
+GLUCOSE
+HGBA
+CHOLEST
+PSA
+OTHERBLD
+BIOPSY
+CHLAMYD
+PAPCONV
+PAPLIQ
+PAPUNSP
+HPVDNA
+PREGTEST
+EKG
+SCOPPROC
+SIGCOLON
+SPIRO
+URINE
+HTTAKE
+WTTAKE
+TEMPTAKE
+BLODPRES
+OTHDIAG
+ASTHMAED
+DIETNUTR
+EXERCISE
+GRWTHDEV
+INJPREV
+STRESMGT
+TOBACED
+WTREDUC
+OTHLTHED
+CAM
+DME
+HOMEHLTH
+PT
+HOSPICE
+RADTHER
+SPOCTHER
+PSYCHOTH
+OTHMNTL
+EXCISION
+ORTHO
+WOUND
+OTHPROC NOYESF.
+CASTAGE CASTAGEF.
+SCOPEWI1    
+SCOPEWI2 $PROCF.
+SCPWI13D   
+SCPWI23D $PROC3DF. 
+SCPWI12D   
+SCPWI22D $PROC2DF.
+TEMPF TEMPFF.
+BMI BMIF.
+BPSYS BPSYSF.
+BPDIAS BPDIASF.
+DIAGSC1
+DIAGSC2 
+BIOPSYWI $PROCF.   
+DIGSC13D
+DIGSC23D $PROC3DF.
+DIGSC12D   
+DIGSC22D $PROC2DF.
+OTHPROC1
+OTHPROC2
+OTHPROC3
+OTHPROC4 $PROCF.
+OTHPR13D  
+OTHPR23D 
+OTHPR33D 
+OTHPR43D $PROC3DF.
+OTHPR12D  
+OTHPR22D 
+OTHPR32D 
+OTHPR42D $PROC2DF.
+MED MEDF.
+MED1 
+MED2
+MED3 
+MED4 
+MED5 
+MED6
+MED7
+MED8 $MEDCODF.
+NCMED1
+NCMED2
+NCMED3
+NCMED4
+NCMED5
+NCMED6
+NCMED7
+NCMED8 NCMEDF.
+NODISP NODISPF.
+NOFU
+RETPRN 
+REFOTHMD
+RETAPPT
+TELEPHON 
+REFERED
+ADMITHOS 
+OTHDISP 
+NOPROVID   
+PHYS   
+RNLPN   
+NPNMW   
+PHYSASST
+MHP
+OTHPROV  NOYESF.
+TIMEMD TIMEMDF.
+REGION REGIONF.
+MSA MSAF.
+SPEC $SPECF.
+SPECCAT SPECCATF.
+MDDO MDDOF.
+BDATEFL
+SEXFL
+ETHNICFL
+RACEFL
+SENBEFL
+PASTFL
+TIMEMDFL IMPUTF.
+DRUGID1
+DRUGID2
+DRUGID3
+DRUGID4
+DRUGID5
+DRUGID6
+DRUGID7
+DRUGID8 $DRUGIDF.
+
+PRESCR1
+PRESCR2
+PRESCR3
+PRESCR4
+PRESCR5
+PRESCR6
+PRESCR7
+PRESCR8 PRESCRF.
+
+CONTSUB1 
+CONTSUB2 
+CONTSUB3 
+CONTSUB4 
+CONTSUB5 
+CONTSUB6 
+CONTSUB7 
+CONTSUB8 CONTSUBF.
+
+COMSTAT1 
+COMSTAT2 
+COMSTAT3 
+COMSTAT4 
+COMSTAT5 
+COMSTAT6 
+COMSTAT7 
+COMSTAT8 COMSTATF.
+
+RX1CAT1
+RX1CAT2
+RX1CAT3
+RX1CAT4 $RXCATF.
+
+RX1V1C1 
+RX1V1C2
+RX1V1C3
+RX1V1C4 $DRGLV1F.
+
+RX1V2C1
+RX1V2C2
+RX1V2C3
+RX1V2C4 $DRGLV2F.
+
+RX1V3C1 
+RX1V3C2
+RX1V3C3
+RX1V3C4 $DRGLV3F.
+
+RX2CAT1
+RX2CAT2
+RX2CAT3
+RX2CAT4 $RXCATF.
+
+RX2V1C1 
+RX2V1C2
+RX2V1C3
+RX2V1C4 $DRGLV1F.
+
+RX2V2C1
+RX2V2C2
+RX2V2C3
+RX2V2C4 $DRGLV2F.
+
+RX2V3C1 
+RX2V3C2
+RX2V3C3
+RX2V3C4 $DRGLV3F.
+
+RX3CAT1
+RX3CAT2
+RX3CAT3
+RX3CAT4 $RXCATF.
+
+RX3V1C1 
+RX3V1C2
+RX3V1C3
+RX3V1C4 $DRGLV1F.
+
+RX3V2C1
+RX3V2C2
+RX3V2C3
+RX3V2C4 $DRGLV2F.
+
+RX3V3C1 
+RX3V3C2
+RX3V3C3
+RX3V3C4 $DRGLV3F.
+
+RX4CAT1
+RX4CAT2
+RX4CAT3
+RX4CAT4 $RXCATF.
+
+RX4V1C1 
+RX4V1C2
+RX4V1C3
+RX4V1C4 $DRGLV1F.
+
+RX4V2C1
+RX4V2C2
+RX4V2C3
+RX4V2C4 $DRGLV2F.
+
+RX4V3C1 
+RX4V3C2
+RX4V3C3
+RX4V3C4 $DRGLV3F.
+
+RX5CAT1
+RX5CAT2
+RX5CAT3
+RX5CAT4 $RXCATF.
+
+RX5V1C1 
+RX5V1C2
+RX5V1C3
+RX5V1C4 $DRGLV1F.
+
+RX5V2C1
+RX5V2C2
+RX5V2C3
+RX5V2C4 $DRGLV2F.
+
+RX5V3C1 
+RX5V3C2
+RX5V3C3
+RX5V3C4 $DRGLV3F.
+
+RX6CAT1
+RX6CAT2
+RX6CAT3
+RX6CAT4 $RXCATF.
+
+RX6V1C1 
+RX6V1C2
+RX6V1C3
+RX6V1C4 $DRGLV1F.
+
+RX6V2C1
+RX6V2C2
+RX6V2C3
+RX6V2C4 $DRGLV2F.
+
+RX6V3C1 
+RX6V3C2
+RX6V3C3
+RX6V3C4 $DRGLV3F.
+
+RX7CAT1
+RX7CAT2
+RX7CAT3
+RX7CAT4 $RXCATF.
+
+RX7V1C1 
+RX7V1C2
+RX7V1C3
+RX7V1C4 $DRGLV1F.
+
+RX7V2C1
+RX7V2C2
+RX7V2C3
+RX7V2C4 $DRGLV2F.
+
+RX7V3C1 
+RX7V3C2
+RX7V3C3
+RX7V3C4 $DRGLV3F.
+
+RX8CAT1
+RX8CAT2
+RX8CAT3
+RX8CAT4 $RXCATF.
+
+RX8V1C1 
+RX8V1C2
+RX8V1C3
+RX8V1C4 $DRGLV1F.
+
+RX8V2C1
+RX8V2C2
+RX8V2C3
+RX8V2C4 $DRGLV2F.
+
+RX8V3C1 
+RX8V3C2
+RX8V3C3
+RX8V3C4 $DRGLV3F.
+
+RETYPOFF  RETYPOF.
+SOLO  SOLOF.
+EMPSTAT  EMPSTATF.
+OWNS OWNSF.
+LAB  LABF.
+PATEVEN PATEVENF.
+HOMVISR   
+HOSVISR   
+TELCONR   
+ECONR  
+NHVISR ECONRF.
+EMEDREC EMEDRECF.
+EBILLREC EBILRECF.
+PRMCARER
+PRMAIDR
+PRPRVTR
+PRPATR
+PROTHR PRMCAREF.
+MANCAREC MANCARCF.
+PRMANR PRMCAREF.
+PCCPROD
+PCCSAT
+PCCQOC
+PCCPPROF PCCPRODF.
+MEASPUB MEASPUBF.
+PRP4PR
+REVCASER
+REVFFSR
+REVDISCR
+REVCAPR
+REVOTHR  PRMCAREF. 
+ACEPTNEW
+CAPITATE
+NOCAP
+NMEDCARE
+NMEDCAID
+NWORKCMP
+NSELFPAY
+NNOCHRGE CAPITF.
+EDEMOG
+EPROLST
+ECPOE
+EWARN
+ESCRIP
+ECTOE
+EORDER
+ERESULT
+ERANGE
+EIMGRES
+EIMAGE
+EPNOTES
+EHXFU
+EREMIND
+EPUBHLTH 
+ENOTDIS EDEMOGF.
+EMRNEW EMRNEWF.
+SETTYPE SETTYPF.
+TOTCHRON
+TOTDIAG
+TOTNONMED
+TOTHLTED 
+TOTF.
+CCS CCSF.
+RACER RACERF.
+SPECR SPECRF.
+AGEDAYS AGEDAYSF.
+AGER AGERF.
+WHOCOMP WHOCOMPF.
+RACEETH RACEETHF.
+HINCOMER HINCOMEF.
+PBAMORER PBAMOREF.
+URBANRUR URBANRUF.
+PCTPOVR PCTPOVRF.
+;
+

@@ -1,0 +1,370 @@
+          /* 
+
+PROGRAM: NAM05INP
+PURPOSE:  INPUT STATEMENT TO CREATE 2005 NAMCS PUBLIC USE FILE
+
+We recommend that you use a MISSOVER option in your INFILE statement.  Note that the
+value of LRECL may equal or exceed the actual file size.  We use a value of 999 for
+convenience.
+
+EXAMPLE: INFILE [file reference] MISSOVER LRECL=999;
+
+          */
+                                           
+
+INPUT                  
+@1     VMONTH           2.  /*Month of Visit                               */
+@3     VYEAR            4.  /*Year of Visit                                */
+@7     VDAYR            1.  /*Day of Week of Visit                         */
+@8     AGE              3.  /*Patient age in years                         */
+@11    SEX              1.  /*Patient Sex                                  */
+@12    PREGNANT         1.  /*If female, is patient pregnant?              */
+@13    GESTWK           2.  /*Week of gestation                            */
+@15    ETHNIC           1.  /*Patient ethnicity                            */
+@16    RACE             1.  /*Patient race                                 */
+@17    USETOBAC         1.  /*Tobacco use: not current, current            */
+@18    NOTOBAC          1.  /*If "not current" checked, never or former?   */
+@19    PAYPRIV          1.  /*Expected source of payment-Private insurance */                            
+@20    PAYMCARE         1.  /*Expected source of payment - Medicare        */
+@21    PAYMCAID         1.  /*Expected source of payment - Medicaid        */
+@22    PAYWKCMP         1.  /*Expected source of payment - Workers Comp    */
+@23    PAYSELF          1.  /*Expected source of payment - Self pay        */
+@24    PAYNOCHG         1.  /*Expected source of payment - No charge       */
+@25    PAYOTH           1.  /*Expected source of payment - Other           */
+@26    PAYDK            1.  /*Expected source of payment - Unknown         */
+@27    PAYTYPE          1.  /*Expected source of payment - hierarchy       */
+@28    INJDET           1.  /*Is visit related to inj/poison/adverse effect*/
+@29    INJURY           1.  /*Is injury visit related? (recode)            */
+@30    RFV1             5.  /*Reason #1                                    */
+@35    RFV2             5.  /*Reason #2                                    */
+@40    RFV3             5.  /*Reason #3                                    */
+@30    RFV13D           4.  /*Reason #1 - 3 digit                          */
+@35    RFV23D           4.  /*Reason #2 - 3 digit                          */
+@40    RFV33D           4.  /*Reason #3 - 3 digit                          */
+@45    PRIMCARE         1.  /*Are you patient’s primary care physician?    */
+@46    REFER            1.  /*Was patient referred for this visit?         */
+@47    SENBEFOR         1.  /*Have you or anyone in practice seen pat befor*/
+@48    PASTVIS          1.  /*If yes, how many visits in past 12 months?   */
+@49    MAJOR            1.  /*Major reason for visit                       */
+@50    DIAG1       $CHAR5.  /*Diagnosis #1-actual                          */
+@55    DIAG2       $CHAR5.  /*Diagnosis #2-actual                          */
+@60    DIAG3       $CHAR5.  /*Diagnosis #3-actual                          */
+@50    DIAG13D     $CHAR3.  /*Diagnosis #1 - 3 digit                       */
+@55    DIAG23D     $CHAR3.  /*Diagnosis #2 - 3 digit                       */
+@60    DIAG33D     $CHAR3.  /*Diagnosis #3 - 3 digit                       */
+@65    PRDIAG1          1.  /*For dx1, probable, questionable, or ruleout  */
+@66    PRDIAG2          1.  /*For dx2, probable, questionable, or ruleout  */
+@67    PRDIAG3          1.  /*For dx3, probable, questionable, or ruleout  */
+@68    ARTHRTIS         1.  /*Does patient now have - Arthritis            */
+@69    ASTHMA           1.  /*Does patient now have - Asthma               */
+@70    CANCER           1.  /*Does patient now have - Cancer               */
+@71    CEBVD            1.  /*Does patient now have - Cerebrovascular dis  */
+@72    CHF              1.  /*Does patient now have - CHF                  */
+@73    CRF              1.  /*Does patient now have - Chronic renal failure*/
+@74    COPD             1.  /*Does patient now have - COPD                 */
+@75    DEPRN            1.  /*Does patient now have - Depression           */
+@76    DIABETES         1.  /*Does patient now have - Diabetes             */
+@77    HYPLIPID         1.  /*Does patient now have - Hyperlipidemia       */
+@78    HTN              1.  /*Does patient now have - Hypertension         */
+@79    IHD              1.  /*Does patient now have - Ischemic heart dis   */
+@80    OBESITY          1.  /*Does patient now have - Obesity              */
+@81    OSTPRSIS         1.  /*Does patient now have - Osteoporosis         */
+@82    NOCHRON          1.  /*Does patient now have - None of the above    */
+@83    TOTCHRON         2.  /*Total # of chronic conditions                */
+@85    DMP              1.  /*Patient enrollment in disease mgmt program   */
+@86    HTIN             2.  /*Vital signs - Height - inches                */
+@88    WTLB             3.  /*Vital signs - Weight - pounds                */
+@91    BMI              6.  /*BMI - calculated from Height and Weight      */
+@97    TEMPF            4.  /*Vital signs - Temperature (Fahrenheit)       */
+@101   BPSYS            3.  /*Vital signs - Systolic blood pressure        */
+@104   BPDIAS           3.  /*Vital signs - Diastolic blood pressure       */
+@107   DIAGSCRN         1.  /*Were diagnostic services ordered or provided?*/
+@108   BREAST           1.  /*Breast exam                                  */
+@109   PELVIC           1.  /*Pelvic exam                                  */
+@110   RECTAL           1.  /*Rectal exam                                  */
+@111   SKIN             1.  /*Skin exam                                    */
+@112   DEPRESS          1.  /*Depression screening                         */
+@113   ANYIMAGE         1.  /*Any imaging                                  */
+@114   BONEDENS         1.  /*Bone mineral density                         */
+@115   MAMMO            1.  /*Mammography                                  */
+@116   MRI              1.  /*MRI/CT/PET                                   */
+@117   ULTRASND         1.  /*Ultrasound                                   */
+@118   XRAY             1.  /*X-ray                                        */
+@119   OTHIMAGE         1.  /*Other imaging                                */
+@120   CBC              1.  /*CBC                                          */
+@121   ELECTROL         1.  /*Electrolytes                                 */
+@122   GLUCOSE          1.  /*Glucose                                      */
+@123   HGBA             1.  /*HgbA1C                                       */
+@124   CHOLEST          1.  /*Lipids/Cholesterol                           */
+@125   PSA              1.  /*PSA test                                     */
+@126   OTHERBLD         1.  /*Other blood test                             */
+@127   BIOPSY           1.  /*Biopsy                                       */
+@128   CHLAMYD          1.  /*Chlamydia test                               */
+@129   EKG              1.  /*EKG/ECG (electrocardiogram)                  */
+@130   PAP              1.  /*PAP test/cervical                            */
+@131   SCOPPROC         1.  /*Scope procedure                              */
+@132   SIGCOLON         1.  /*Sigmoidoscopy/colonoscopy                    */
+@133   SCOPEWI1    $CHAR4.  /*Scope write in #1                            */
+@137   SCOPEWI2    $CHAR4.  /*Scope write in #2                            */
+@133   SCPWI13D    $CHAR3.  /*Scope write in #1 - 3 digit                  */
+@137   SCPWI23D    $CHAR3.  /*Scope write in #2 - 3 digit                  */
+@133   SCPWI12D    $CHAR2.  /*Scope write in #1 - 2 digit                  */
+@137   SCPWI22D    $CHAR2.  /*Scope write in #2 - 2 digit                  */
+@141   SPIRO            1.  /*Spirometry/pulmonary function                */
+@142   URINE            1.  /*Urinalysis                                   */
+@143   HTTAKE           1.  /*Height taken                                 */
+@144   WTTAKE           1.  /*Weight taken                                 */
+@145   TEMPTAKE         1.  /*Temperature taken                            */
+@146   BLODPRES         1.  /*Blood pressure taken                         */
+@147   OTHDIAG          1.  /*Other diagnostic/screening test/service      */
+@148   DIAGSC1     $CHAR4.  /*Diagnostic service #1                        */
+@152   DIAGSC2     $CHAR4.  /*Diagnostic service #2                        */
+@148   DIGSC13D    $CHAR3.  /*Diagnostic service #1 - 3 digit              */
+@152   DIGSC23D    $CHAR3.  /*Diagnostic service #2 - 3 digit              */
+@148   DIGSC12D    $CHAR2.  /*Diagnostic service #1 - 2 digit              */
+@152   DIGSC22D    $CHAR2.  /*Diagnostic service #2 - 2 digit              */
+@156   TOTDIAG          2.  /*Total diag/screening services ordered/provided*/
+@158   HEALTHED         1.  /*Was health education ordered or provided?    */
+@159   ASTHMAED         1.  /*Asthma education                             */
+@160   DIETNUTR         1.  /*Diet/nutrition                               */
+@161   EXERCISE         1.  /*Exercise                                     */
+@162   GRWTHDEV         1.  /*Growth/development                           */
+@163   INJPREV          1.  /*Injury prevention                            */
+@164   STRESMGT         1.  /*Stress management                            */
+@165   TOBACED          1.  /*Tobacco use/Exposure                         */
+@166   WTREDUC          1.  /*Weight reduction                             */
+@167   OTHLTHED         1.  /*Other health education                       */
+@168   TOTHLTED         2.  /*Total health education ordered or provided   */
+@170   NONMED           1.  /*Was non-medication therapy ordered/provided  */
+@171   CAM              1.  /*Complementary alternative medicine           */
+@172   DME              1.  /*Durable medical equipment                    */
+@173   HOMEHLTH         1.  /*Home health care                             */
+@174   HOSPICE          1.  /*Hospice care                                 */
+@175   PT               1.  /*Physical therapy                             */
+@176   SPOCTHER         1.  /*Speech/occupational therapy                  */
+@177   PSYCHOTH         1.  /*Psychotherapy                                */
+@178   OTHMNTL          1.  /*Other mental health counseling               */
+@179   EXCISION         1.  /*Excision                                     */
+@180   ORTHO            1.  /*Orthopedic care                              */
+@181   WOUND            1.  /*Wound care                                   */
+@182   OTHPROC          1.  /*Other procedure                              */
+@183   OTHPROC1    $CHAR4.  /*Procedure 1                                  */
+@187   OTHPROC2    $CHAR4.  /*Procedure 2                                  */
+@191   OTHPROC3    $CHAR4.  /*Procedure 3                                  */
+@195   OTHPROC4    $CHAR4.  /*Procedure 4                                  */
+@183   OTHPR13D    $CHAR3.  /*Procedure 1 - 3 digit                        */
+@187   OTHPR23D    $CHAR3.  /*Procedure 2 - 3 digit                        */
+@191   OTHPR33D    $CHAR3.  /*Procedure 3 - 3 digit                        */
+@195   OTHPR43D    $CHAR3.  /*Procedure 4 - 3 digit                        */
+@183   OTHPR12D    $CHAR2.  /*Procedure 1 - 2 digit                        */
+@187   OTHPR22D    $CHAR2.  /*Procedure 2 - 2 digit                        */
+@191   OTHPR32D    $CHAR2.  /*Procedure 3 - 2 digit                        */
+@195   OTHPR42D    $CHAR2.  /*Procedure 4 - 2 digit                        */
+@199   TOTNONMED        2.  /*Total number of non-medication treatments    */
+@201   MED              1.  /*Was medication ordered or provided?          */
+@202   MED1        $CHAR5.  /*Medication 1                                 */
+@207   MED2        $CHAR5.  /*Medication 2                                 */
+@212   MED3        $CHAR5.  /*Medication 3                                 */
+@217   MED4        $CHAR5.  /*Medication 4                                 */
+@222   MED5        $CHAR5.  /*Medication 5                                 */
+@227   MED6        $CHAR5.  /*Medication 6                                 */
+@232   MED7        $CHAR5.  /*Medication 7                                 */
+@237   MED8        $CHAR5.  /*Medication 8                                 */
+@242   NCMED1           1.  /*Was medication 1 new or continued?           */
+@243   NCMED2           1.  /*Was medication 2 new or continued?           */
+@244   NCMED3           1.  /*Was medication 3 new or continued?           */
+@245   NCMED4           1.  /*Was medication 4 new or continued?           */
+@246   NCMED5           1.  /*Was medication 5 new or continued?           */
+@247   NCMED6           1.  /*Was medication 6 new or continued?           */
+@248   NCMED7           1.  /*Was medication 7 new or continued?           */
+@249   NCMED8           1.  /*Was medication 8 new or continued?           */
+@250   NUMNEW           1.  /*Number of new medications coded              */
+@251   NUMCONT          1.  /*Number of continuing medications coded       */
+@252   NUMMED           1.  /*Number of medications coded                  */
+@253   NOPROVID         1.  /*No answer to provider item                   */
+@254   PHYS             1.  /*Physician seen                               */
+@255   PHYSASST         1.  /*Physician assistant seen                     */
+@256   NPNMW            1.  /*Nurse pract/Midwife seen                     */
+@257   RNLPN            1.  /*RN/LPN seen                                  */
+@258   OTHPROV          1.  /*Other provider seen                          */
+@259   NODISP           1.  /*No answer to disposition item                */
+@260   NOFU             1.  /*No follow up                                 */
+@261   RETPRN           1.  /*Return PRN                                   */
+@262   REFOTHMD         1.  /*Refer to other MD                            */
+@263   RETAPPT          1.  /*Return, appt.                                */
+@264   TELEPHON         1.  /*Telephone follow up                          */
+@265   REFERED          1.  /*Refer to ED                                  */
+@266   ADMITHOS         1.  /*Admit to hospital                            */
+@267   OTHDISP          1.  /*Other disposition                            */
+@268   TIMEMD           3.  /*Time spent with physician                    */
+@271   PATWT            6.  /*Patient visit weight                         */
+@277   REGION           1.  /*Geographic region                            */
+@278   MSA              1.  /*MSA or non-MSA area                          */
+@279   SPEC        $CHAR3.  /*Physician specialty                          */
+@282   MDDO             1.  /*MD or DO                                     */
+@283   PHYCODE          4.  /*Physician code                               */
+@287   PATCODE          3.  /*Patient code                                 */
+@290   BDATEFL          1.  /*Birth date imputed?                          */
+@291   SEXFL            1.  /*Sex imputed?                                 */
+@292   ETHNICFL         1.  /*Ethnicity imputed?                           */
+@293   RACEFL           1.  /*Race imputed?                                */
+@294   SENBEFL          1.  /*Seen before imputed?                         */
+@295   PASTFL           1.  /*Number of past visits imputed?               */
+@296   TIMEMDFL         1.  /*Time spent with physician imputed?           */
+@297   GEN1        $CHAR5.  /*Generic code for med #1                      */
+@302   PRESCR1          1.  /*Prescription status code                     */
+@303   CONTSUB1         1.  /*Controlled status code                       */
+@304   COMSTAT1         1.  /*Composition status code                      */
+@305   DRUG1CL1    $CHAR4.  /*NDC code #1 for medication #1                */
+@309   DRUG1CL2    $CHAR4.  /*NDC code #2 for medication #1                */
+@313   DRUG1CL3    $CHAR4.  /*NDC code #3 for medication #1                */
+@317   DRG1ING1    $CHAR5.  /*Ing. #1                                      */
+@322   DRG1ING2    $CHAR5.  /*Ing. #2                                      */
+@327   DRG1ING3    $CHAR5.  /*Ing. #3                                      */
+@332   DRG1ING4    $CHAR5.  /*Ing. #4                                      */
+@337   DRG1ING5    $CHAR5.  /*Ing. #5                                      */
+@342   GEN2        $CHAR5.  /*Generic code for med. #2                     */
+@347   PRESCR2          1.  /*Prescription status code                     */
+@348   CONTSUB2         1.  /*Controlled status code                       */
+@349   COMSTAT2         1.  /*Composition status code                      */
+@350   DRUG2CL1    $CHAR4.  /*NDC code #1 for medication #2                */
+@354   DRUG2CL2    $CHAR4.  /*NDC code #2 for medication #2                */
+@358   DRUG2CL3    $CHAR4.  /*NDC code #3 for medication #2                */
+@362   DRG2ING1    $CHAR5.  /*Ing. #1                                      */
+@367   DRG2ING2    $CHAR5.  /*Ing. #2                                      */
+@372   DRG2ING3    $CHAR5.  /*Ing. #3                                      */
+@377   DRG2ING4    $CHAR5.  /*Ing. #4                                      */
+@382   DRG2ING5    $CHAR5.  /*Ing. #5                                      */
+@387   GEN3        $CHAR5.  /*Generic code for med. #3                     */
+@392   PRESCR3          1.  /*Prescription status code                     */
+@393   CONTSUB3         1.  /*Controlled status code                       */
+@394   COMSTAT3         1.  /*Composition status code                      */
+@395   DRUG3CL1    $CHAR4.  /*NDC code #1 for medication #3                */
+@399   DRUG3CL2    $CHAR4.  /*NDC code #2 for medication #3                */
+@403   DRUG3CL3    $CHAR4.  /*NDC code #3 for medication #3                */
+@407   DRG3ING1    $CHAR5.  /*Ing. #1                                      */
+@412   DRG3ING2    $CHAR5.  /*Ing. #2                                      */
+@417   DRG3ING3    $CHAR5.  /*Ing. #3                                      */
+@422   DRG3ING4    $CHAR5.  /*Ing. #4                                      */
+@427   DRG3ING5    $CHAR5.  /*Ing. #5                                      */
+@432   GEN4        $CHAR5.  /*Generic code for med. #4                     */
+@437   PRESCR4          1.  /*Prescription status code                     */
+@438   CONTSUB4         1.  /*Controlled status code                       */
+@439   COMSTAT4         1.  /*Composition status code                      */
+@440   DRUG4CL1    $CHAR4.  /*NDC code #1 for medication #4                */
+@444   DRUG4CL2    $CHAR4.  /*NDC code #2 for medication #4                */
+@448   DRUG4CL3    $CHAR4.  /*NDC code #3 for medication #4                */
+@452   DRG4ING1    $CHAR5.  /*Ing. #1                                      */
+@457   DRG4ING2    $CHAR5.  /*Ing. #2                                      */
+@462   DRG4ING3    $CHAR5.  /*Ing. #3                                      */
+@467   DRG4ING4    $CHAR5.  /*Ing. #4                                      */
+@472   DRG4ING5    $CHAR5.  /*Ing. #5                                      */
+@477   GEN5        $CHAR5.  /*Generic code  for med. #5                    */
+@482   PRESCR5          1.  /*Prescription status code                     */
+@483   CONTSUB5         1.  /*Controlled status code                       */
+@484   COMSTAT5         1.  /*Composition status code                      */
+@485   DRUG5CL1    $CHAR4.  /*NDC code #1 for medication #5                */
+@489   DRUG5CL2    $CHAR4.  /*NDC code #2 for medication #5                */
+@493   DRUG5CL3    $CHAR4.  /*NDC code #3 for medication #5                */
+@497   DRG5ING1    $CHAR5.  /*Ing. #1                                      */
+@502   DRG5ING2    $CHAR5.  /*Ing. #2                                      */
+@507   DRG5ING3    $CHAR5.  /*Ing. #3                                      */
+@512   DRG5ING4    $CHAR5.  /*Ing. #4                                      */
+@517   DRG5ING5    $CHAR5.  /*Ing. #5                                      */
+@522   GEN6        $CHAR5.  /*Generic code for med. #6                     */
+@527   PRESCR6          1.  /*Prescription status code                     */
+@528   CONTSUB6         1.  /*Controlled status code                       */
+@529   COMSTAT6         1.  /*Composition status code                      */
+@530   DRUG6CL1    $CHAR4.  /*NDC code #1 for medication #6                */
+@534   DRUG6CL2    $CHAR4.  /*NDC code #2 for medication #6                */
+@538   DRUG6CL3    $CHAR4.  /*NDC code #3 for medication #6                */
+@542   DRG6ING1    $CHAR5.  /*Ing. #1                                      */
+@547   DRG6ING2    $CHAR5.  /*Ing. #2                                      */
+@552   DRG6ING3    $CHAR5.  /*Ing. #3                                      */
+@557   DRG6ING4    $CHAR5.  /*Ing. #4                                      */
+@562   DRG6ING5    $CHAR5.  /*Ing. #5                                      */
+@567   GEN7        $CHAR5.  /*Generic code  for med. #7                    */
+@572   PRESCR7          1.  /*Prescription status code                     */
+@573   CONTSUB7         1.  /*Controlled status code                       */
+@574   COMSTAT7         1.  /*Composition status code                      */
+@575   DRUG7CL1    $CHAR4.  /*NDC code #1 for medication #7                */
+@579   DRUG7CL2    $CHAR4.  /*NDC code #2 for medication #7                */
+@583   DRUG7CL3    $CHAR4.  /*NDC code #3 for medication #7                */
+@587   DRG7ING1    $CHAR5.  /*Ing. #1                                      */
+@592   DRG7ING2    $CHAR5.  /*Ing. #2                                      */
+@597   DRG7ING3    $CHAR5.  /*Ing. #3                                      */
+@602   DRG7ING4    $CHAR5.  /*Ing. #4                                      */
+@607   DRG7ING5    $CHAR5.  /*Ing. #5                                      */
+@612   GEN8        $CHAR5.  /*Generic code for med. #8                     */
+@617   PRESCR8          1.  /*Prescription status code                     */
+@618   CONTSUB8         1.  /*Controlled status code                       */
+@619   COMSTAT8         1.  /*Composition status code                      */
+@620   DRUG8CL1    $CHAR4.  /*NDC code #1 for medication #8                */
+@624   DRUG8CL2    $CHAR4.  /*NDC code #2 for medication #8                */
+@628   DRUG8CL3    $CHAR4.  /*NDC code #3 for medication #8                */
+@632   DRG8ING1    $CHAR5.  /*Ing. #1                                      */
+@637   DRG8ING2    $CHAR5.  /*Ing. #2                                      */
+@642   DRG8ING3    $CHAR5.  /*Ing. #3                                      */
+@647   DRG8ING4    $CHAR5.  /*Ing. #4                                      */
+@652   DRG8ING5    $CHAR5.  /*Ing. #5                                      */
+@657   RETYPOFF         1.  /*Type of office setting                       */
+@658   SOLO             1.  /*Solo or group practice                       */
+@659   EMPSTAT          1.  /*Employment status of physician               */
+@660   OWNS             1.  /*Who owns the practice?                       */
+@661   LAB              1.  /*Is lab testing performed in the office?      */
+@662   HOMVISR          1.  /*In last normal wk of prac, home visits (inc nursing homes)?*/
+@663   HOSVISR          1.  /*In last normal wk of prac, hospital visits?  */
+@664   TELCONR          1.  /*In last normal wk of prac, tel consults w/patients?*/
+@665   ECONR            1.  /*In last normal wk of prac, email consults w/patients?*/
+@666   EBILLREC         1.  /*Does your practice submit claims electronically?*/
+@667   EMEDREC          1.  /*Does your practice use electronic medical records?*/
+@668   EDEMOG           1.  /*Does EMR system include patient demographic info?*/
+@669   ECPOE            1.  /*Does EMR system include comp orders for prescrip?*/
+@670   ECTOE            1.  /*Does EMR system include comp orders for tests?*/
+@671   ERESULT          1.  /*Does EMR system include test results?        */
+@672   ENNOTES          1.  /*Does EMR system include nurse's notes?       */
+@673   EPNOTES          1.  /*Does EMR system include physician's notes?   */
+@674   EREMIND          1.  /*Does EMR system incl reminders interv/tests? */
+@675   EPUBHLTH         1.  /*Does EMR system incl public hlth reporting?  */
+@676   PRMCARER         1.  /*% of patient care revenue from Medicare      */
+@677   PRMAIDR          1.  /*% of patient care revenue from Medicaid      */
+@678   PRPRVTR          1.  /*% of patient care revenue from priv insurance*/
+@679   PROTHR           1.  /*% of patient care revenue from other         */
+@680   MANCAREC         1.  /*How many managed care contracts?             */
+@681   PRMANR           1.  /*% of patient care revenue from managed care  */
+@682   ACEPTNEW         1.  /*Is physician accepting new patients?         */
+@683   CAPITATE         1.  /*For new patients, accepts private capitated  */
+@684   NOCAP            1.  /*For new patients, accepts private non-capit  */
+@685   NMEDCARE         1.  /*For new patients, accepts Medicare           */
+@686   NMEDCAID         1.  /*For new patients, accepts Medicaid           */
+@687   NWORKCMP         1.  /*For new patients, accepts Workers comp       */
+@688   NSELFPAY         1.  /*For new patients, accepts Self-pay           */
+@689   NNOCHRGE         1.  /*For new patients, accepts No charge          */
+@690   REFMDCAD         1.  /*Difficulty referring Medicaid pat for consult*/
+@691   REFMDCAR         1.  /*Difficulty referring Medicare pat for consult*/
+@692   REFPRIV          1.  /*Difficulty referring priv insur pat for cons */
+@693   REFUNINS         1.  /*Difficulty referring uninsured pat for cons  */
+@694   RACER            1.  /*Race recode                                  */
+@695   RACEETH          1.  /*Race/Ethnicity                               */
+@696   SPECR            2.  /*Physician specialty recode (15 groups)       */
+@698   SPECCAT          1.  /*Physician Specialty recode (3 groups)        */
+@699   AGEDAYS          3.  /*Age in days for patients less than one year  */
+@702   AGER             1.  /*Age recode                                   */
+@703   DIAG1R           6.  /*Diagnosis #1 - numeric recode                */
+@709   DIAG2R           6.  /*Diagnosis #2 - numeric recode                */
+@715   DIAG3R           6.  /*Diagnosis #3 - numeric recode                */
+@721   SCOPWI1R         4.  /*Scope write-in #1 numeric recode             */
+@725   SCOPWI2R         4.  /*Scope write-in #2 numeric recode             */
+@729   DIAGSC1R         4.  /*Other diag/screen serv #1 - numeric recode   */  
+@733   DIAGSC2R         4.  /*OTher diag/screen serv #2 - numeric recode   */
+@737   OTHPROC1R        4.  /*Procedure 1 - numeric recode                 */
+@741   OTHPROC2R        4.  /*Procedure 2 - numeric recode                 */
+@745   OTHPROC3R        4.  /*Procedure 3 - numeric recode                 */
+@749   OTHPROC4R        4.  /*Procedure 4 - numeric recode                 */
+@753   WHOCOMP          1.  /*Who completed the Patient Record Forms?      */
+@754   SETTYPE          1.  /*Setting type                                 */
+@755   YEAR             4.  /*Year (2005)                                  */
+@759   CSTRATM          8.  /*Clustered PSU stratum marker (masked)        */    
+@767   CPSUM            6.  /*Clustered PSUM marker (masked)               */
+@773   PHYSWT           6.  /*Physician weight                             */
+;

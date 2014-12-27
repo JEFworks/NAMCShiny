@@ -1,0 +1,702 @@
+          /*
+SAS CODEBOOK FOR 2005 NAMCS PUBLIC USE FILE
+INCLUDES VARIABLE LABELS AND FORMAT ASSIGNMENTS
+          */            
+                                           
+
+LABEL
+VMONTH="Month of visit"   
+VMONTH="Month of visit"
+VYEAR="Year of visit"
+VDAYR="Day of week of visit"
+AGE="Patient age in years"
+SEX="Patient sex"
+PREGNANT="If female, is patient pregnant?"
+GESTWK="Week of gestation"
+ETHNIC="Patient ethnicity"
+RACE="Patient race"
+USETOBAC="Tobacco use: not current, current"
+NOTOBAC="If "not current" checked for tobacco use, never or former?"
+PAYPRIV="Expected source of payment - Private insurance"
+PAYMCARE="Expected source of payment - Medicare"
+PAYMCAID="Expected source of payment - Medicaid"
+PAYWKCMP="Expected source of payment - Workers Compensation"
+PAYSELF="Expected source of payment - Self pay"
+PAYNOCHG="Expected source of payment - No charge"
+PAYOTH="Expected source of payment - Other"
+PAYDK="Expected source of payment - Unknown"
+PAYTYPE="Expected source of payment - hierarchy"
+INJDET="Is visit related to injury/poisoning/adverse effect?"
+INJURY="Is injury visit related?"
+RFV1="Reason for visit #1"
+RFV2="Reason for visit #2"
+RFV3="Reason for visit #3"
+RFV13D="Reason for visit #1 - 3 digit"
+RFV23D="Reason for visit #2 - 3 digit"
+RFV33D="Reason for visit #3 - 3 digit"
+PRIMCARE="Are you the patient's primary care physician?"
+REFER="Was patient referred for this visit?"
+SENBEFOR="Have you/anyone in practice seen patient before?"
+PASTVIS="If yes, how many past visits in last 12 months?"
+MAJOR="Major reason for visit"
+DIAG1="Diagnosis #1 - specific"
+DIAG2="Diagnosis #2 - specific"
+DIAG3="Diagnosis #3 - specific"
+DIAG13D="Diagnosis #1 - 3 digit"
+DIAG23D="Diagnosis #2 - 3 digit"
+DIAG33D="Diagnosis #3 - 3 digit"
+PRDIAG1="For dx1, is this probable, questionable, or ruleout?"
+PRDIAG2="For dx2, is this probable, questionable, or ruleout?"
+PRDIAG3="For dx3, is this probable, questionable, or ruleout?"
+ARTHRTIS="Does patient now have - Arthritis"
+ASTHMA="Does patient now have - Asthma"
+CANCER="Does patient now have - Cancer"
+CEBVD="Does patient now have - Cerebrovascular disease"
+CHF="Does patient now have - CHF"
+CRF="Does patient now have - Chronic renal failure"
+COPD="Does patient now have - COPD"
+DEPRN="Does patient now have - Depression "
+DIABETES="Does patient now have - Diabetes"
+HYPLIPID="Does patient now have - Hyperlipidemia"
+HTN="Does patient now have - Hypertension"
+IHD="Does patient now have - Ischemic heart disease"
+OBESITY="Does patient now have - Obesity"
+OSTPRSIS="Does patient now have - Osteoporosis"
+NOCHRON="Does patient now have - None of the listed chronic conditions"
+TOTCHRON="Total number of chronic conditions"
+DMP="Status of patient enrollment in a disease management program"
+HTIN="Vital signs - Height - inches"
+WTLB="Vital signs - Weight - pounds"
+BMI="Body-Mass Index"
+TEMPF="Vital signs - Temperature (Fahrenheit)"
+BPSYS="Vital signs - Systolic blood pressure"
+BPDIAS="Vital signs - Diastolic blood pressure"
+DIAGSCRN="Were diagnostic services ordered or provided?"
+BREAST="Breast exam"
+PELVIC="Pelvic exam"
+RECTAL="Rectal exam"
+SKIN="Skin exam"
+DEPRESS="Depression screening"
+ANYIMAGE="Any imaging"
+BONEDENS="Bone mineral density"
+MAMMO="Mammography"
+MRI="MRI/CT/PET"
+ULTRASND="Ultrasound"
+XRAY="X-ray"
+OTHIMAGE="Other imaging"
+CBC="CBC"
+ELECTROL="Electrolytes"
+GLUCOSE="Glucose"
+HGBA="HgbA1C"
+CHOLEST="Lipids/Cholesterol"
+PSA="PSA test"
+OTHERBLD="Other blood test"
+BIOPSY="Biopsy"
+CHLAMYD="Chlamydia test"
+EKG="EKG/ECG (electrocardiogram)"
+PAP="PAP test/cervical"
+SCOPPROC="Scope procedure ordered or provided"
+SIGCOLON="Sigmoidoscopy/Colonoscopy"
+SCOPEWI1="Scope procedure #1"
+SCOPEWI2="Scope procedure #2"
+SCPWI13D="Scope procedure #1 - 3 digit"
+SCPWI23D="Scope procedure #2 - 3 digit"
+SCPWI12D="Scope procedure #1 - 2 digit"
+SCPWI22D="Scope procedure #2 - 2 digit"
+SPIRO="Spirometry/pulmonary function"
+URINE="Urinalysis"
+HTTAKE="Height taken"
+WTTAKE="Weight taken"
+TEMPTAKE="Temperature taken"
+BLODPRES="Blood pressure taken"
+OTHDIAG="Other diagnostic/screening test/service"
+DIAGSC1="Diagnostic service #1"
+DIAGSC2="Diagnostic service #2"
+DIGSC13D="Diagnostic service #1 - 3 digit"
+DIGSC23D="Diagnostic service #2 - 3 digit"
+DIGSC12D="Diagnostic service #1 - 2 digit"
+DIGSC22D="Diagnostic service #2 - 2 digit"
+TOTDIAG="Total diag/screening services ordered or provided"
+HEALTHED="Was health education ordered or provided?"
+ASTHMAED="Asthma education"
+DIETNUTR="Diet/nutrition"
+EXERCISE="Exercise"
+GRWTHDEV="Growth/development"
+INJPREV="Injury prevention"
+STRESMGT="Stress management"
+TOBACED="Tobacco use/Exposure"
+WTREDUC="Weight reduction"
+OTHLTHED="Other health education"
+TOTHLTED="Total number of health education categories ordered or provided"
+NONMED="Was non-medication therapy ordered or provided?"
+CAM="Complementary alternative medicine"
+DME="Durable medical equipment"
+HOMEHLTH="Home health care"
+HOSPICE="Hospice care"
+PT="Physical therapy"
+SPOCTHER="Speech/occupational therapy"
+PSYCHOTH="Psychotherapy"
+OTHMNTL="Other mental health counseling"
+EXCISION="Excision"
+ORTHO="Orthopedic care"
+WOUND="Wound care"
+OTHPROC="Other procedure"
+OTHPROC1="Procedure 1"
+OTHPROC2="Procedure 2"
+OTHPROC3="Procedure 3"
+OTHPROC4="Procedure 4"
+OTHPR13D="Procedure 1 - 3 digit"
+OTHPR23D="Procedure 2 - 3 digit"
+OTHPR33D="Procedure 3 - 3 digit"
+OTHPR43D="Procedure 4 - 3 digit"
+OTHPR12D="Procedure 1 - 2 digit"
+OTHPR22D="Procedure 2 - 2 digit"
+OTHPR32D="Procedure 3 - 2 digit"
+OTHPR42D="Procedure 4 - 2 digit"
+TOTNONMED ="Total number of non-medication treatments"
+MED="Was medication ordered or provided?"
+MED1="Medication"
+MED2="Medication"
+MED3="Medication"
+MED4="Medication"
+MED5="Medication"
+MED6="Medication"
+MED7="Medication"
+MED8="Medication"
+NCMED1="Was medication 1 new or continued?"
+NCMED2="Was medication 2 new or continued?"
+NCMED3="Was medication 3 new or continued?"
+NCMED4="Was medication 4 new or continued?"
+NCMED5="Was medication 5 new or continued?"
+NCMED6="Was medication 6 new or continued?"
+NCMED7="Was medication 7 new or continued?"
+NCMED8="Was medication 8 new or continued?"
+NUMNEW="Number of new medications coded"
+NUMCONT="Number of continued medications coded"
+NUMMED="Number of medications coded"
+NOPROVID="No answer to provider item"
+PHYS="Physician seen"
+PHYSASST="Physician assistant seen"
+NPNMW="Nurse pract/Midwife seen"
+RNLPN="RN/LPN seen"
+OTHPROV="Other provider seen"
+NODISP="No answer to disposition item"
+NOFU="No follow up"
+RETPRN="Return PRN"
+REFOTHMD="Refer to other MD"
+RETAPPT="Return, appt."
+TELEPHON="Telephone follow up"
+REFERED="Refer to emergency department"
+ADMITHOS="Admit to hospital"
+OTHDISP="Other disposition"
+TIMEMD="Time spent with physician"
+PATWT="Patient visit weight"
+REGION="Geographic region"
+MSA="MSA or non-MSA area"
+SPEC="Physician specialty"
+MDDO="MD or DO"
+PHYCODE="Physician code"
+PATCODE="Patient code"
+BDATEFL="Birth date imputed?"
+SEXFL="Sex imputed?"
+ETHNICFL="Ethnicity imputed?"
+RACEFL="Race imputed?"
+SENBEFL="Seen before imputed?"
+PASTFL="Number of past visits imputed?"
+TIMEMDFL="Time spent with physician imputed?"
+GEN1="Generic code for med #1"
+PRESCR1="Prescription status code for med #1"
+CONTSUB1="Controlled status code for med #1"
+COMSTAT1="Composition status code for med #1"
+DRUG1CL1="NDC code #1 for medication #1"
+DRUG1CL2="NDC code #2 for medication #1"
+DRUG1CL3="NDC code #3 for medication #1"
+DRG1ING1="Ingredient code #1 for medication #1"
+DRG1ING2="Ingredient code #2 for medication #1"
+DRG1ING3="Ingredient code #3 for medication #1"
+DRG1ING4="Ingredient code #4 for medication #1"
+DRG1ING5="Ingredient code #5 for medication #1"
+GEN2="Generic code for med #2"
+PRESCR2="Prescription status code for med #2"
+CONTSUB2="Controlled status code for med #2"
+COMSTAT2="Composition status code for med #2"
+DRUG2CL1="NDC code #1 for medication #2"
+DRUG2CL2="NDC code #2 for medication #2"
+DRUG2CL3="NDC code #3 for medication #2"
+DRG2ING1="Ingredient code #1 for medication #2"
+DRG2ING2="Ingredient code #2 for medication #2"
+DRG2ING3="Ingredient code #3 for medication #2"
+DRG2ING4="Ingredient code #4 for medication #2"
+DRG2ING5="Ingredient code #5 for medication #2"
+GEN3="Generic code for med #3"
+PRESCR3="Prescription status code for med #3"
+CONTSUB3="Controlled status code for med #3"
+COMSTAT3="Composition status code for med #3"
+DRUG3CL1="NDC code #1 for medication #3"
+DRUG3CL2="NDC code #2 for medication #3"
+DRUG3CL3="NDC code #3 for medication #3"
+DRG3ING1="Ingredient code #1 for medication #3"
+DRG3ING2="Ingredient code #2 for medication #3"
+DRG3ING3="Ingredient code #3 for medication #3"
+DRG3ING4="Ingredient code #4 for medication #3"
+DRG3ING5="Ingredient code #5 for medication #3"
+GEN4="Generic code for med #4"
+PRESCR4="Prescription status code for med #4"
+CONTSUB4="Controlled status code for med #4"
+COMSTAT4="Composition status code for med #4"
+DRUG4CL1="NDC code #1 for medication #4"
+DRUG4CL2="NDC code #2 for medication #4"
+DRUG4CL3="NDC code #3 for medication #4"
+DRG4ING1="Ingredient code #1 for medication #4"
+DRG4ING2="Ingredient code #2 for medication #4"
+DRG4ING3="Ingredient code #3 for medication #4"
+DRG4ING4="Ingredient code #4 for medication #4"
+DRG4ING5="Ingredient code #5 for medication #4"
+GEN5="Generic code  for med #5"
+PRESCR5="Prescription status code for med #5"
+CONTSUB5="Controlled status code for med #5"
+COMSTAT5="Composition status code for med #5"
+DRUG5CL1="NDC code #1 for medication #5"
+DRUG5CL2="NDC code #2 for medication #5"
+DRUG5CL3="NDC code #3 for medication #5"
+DRG5ING1="Ingredient code #1 for medication #5"
+DRG5ING2="Ingredient code #2 for medication #5"
+DRG5ING3="Ingredient code #3 for medication #5"
+DRG5ING4="Ingredient code #4 for medication #5"
+DRG5ING5="Ingredient code #5 for medication #5"
+GEN6="Generic code for med #6"
+PRESCR6="Prescription status code for med #6"
+CONTSUB6="Controlled status code for med #6"
+COMSTAT6="Composition status code for med #6"
+DRUG6CL1="NDC code #1 for medication #6"
+DRUG6CL2="NDC code #2 for medication #6"
+DRUG6CL3="NDC code #3 for medication #6"
+DRG6ING1="Ingredient code #1 for medication #6"
+DRG6ING2="Ingredient code #2 for medication #6"
+DRG6ING3="Ingredient code #3 for medication #6"
+DRG6ING4="Ingredient code #4 for medication #6"
+DRG6ING5="Ingredient code #5 for medication #6"
+GEN7="Generic code for med #7"
+PRESCR7="Prescription status code for med #7"
+CONTSUB7="Controlled status code for med #7"
+COMSTAT7="Composition status code for med #7"
+DRUG7CL1="NDC code #1 for medication #7"
+DRUG7CL2="NDC code #2 for medication #7"
+DRUG7CL3="NDC code #3 for medication #7"
+DRG7ING1="Ingredient code #1 for medication #7"
+DRG7ING2="Ingredient code #2 for medication #7"
+DRG7ING3="Ingredient code #3 for medication #7"
+DRG7ING4="Ingredient code #4 for medication #7"
+DRG7ING5="Ingredient code #5 for medication #7"
+GEN8="Generic code for med #8"
+PRESCR8="Prescription status code for med #8"
+CONTSUB8="Controlled status code for med #8"
+COMSTAT8="Composition status code for med #8"
+DRUG8CL1="NDC code #1 for medication #8"
+DRUG8CL2="NDC code #2 for medication #8"
+DRUG8CL3="NDC code #3 for medication #8"
+DRG8ING1="Ingredient code #1 for medication #8"
+DRG8ING2="Ingredient code #2 for medication #8"
+DRG8ING3="Ingredient code #3 for medication #8"
+DRG8ING4="Ingredient code #4 for medication #8"
+DRG8ING5="Ingredient code #5 for medication #8"
+RETYPOFF="Type of office setting"
+SOLO="Solo or group practice"
+EMPSTAT="Employment status of physician"
+OWNS="Who owns this practice?"
+LAB="Is any lab testing performed in the office?"
+HOMVISR="During last normal wk of practice, did phys make home visits (incl nursing homes)?"
+HOSVISR="During last normal wk of practice, did phys make hospital visits?"
+TELCONR="During last normal wk of practice, did phys do tel consults w/patients?"
+ECONR="During last normal wk of practice, did phys do email consults w/patients?"
+EBILLREC="Does practice submit claims electronically?"
+EMEDREC="Does practice use electronic medical records?"
+EDEMOG="Does practice's EMR system include patient demographic info?"
+ECPOE="Does practice's EMR system include computerized orders for prescriptions?"
+ECTOE="Does practice's EMR system include computerized orders for tests?"
+ERESULT="Does practice's EMR system include test results?"
+ENNOTES="Does practice's EMR system include nurses' notes?"
+EPNOTES="Does practice's EMR system include physicians' notes?"
+EREMIND="Does practice's EMR system include reminders for interventions/tests?"
+EPUBHLTH="Does pracice's EMR system include public health reporting?"
+PRMCARER="Percent of patient care revenue from Medicare"
+PRMAIDR="Percent of patient care revenue from Medicaid"
+PRPRVTR="Percent of patient care revenue from private insurance"
+PROTHR="Percent of patient care revenue from other sources"
+MANCAREC="How many managed care contracts does this practice have?"
+PRMANR="Percent of patient care revenue from managed care contracts"
+ACEPTNEW="Is physician currently accepting new patients?"
+CAPITATE="For new patients, physician accepts: capitated private insurance"
+NOCAP="For new patients, physician accepts: non-capitated private insurance"
+NMEDCARE="For new patients, physician accepts: Medicare"
+NMEDCAID="For new patients, physician accepts: Medicaid"
+NWORKCMP="For new patients, physician accepts: workers compensation"
+NSELFPAY="For new patients, physician accepts: self-payment"
+NNOCHRGE="For new patients, physician accepts: no charge"
+REFMDCAD="Difficulty in referring Medicaid patients for specialty consultation"
+REFMDCAR="Difficulty in referring Medicare patients for specialty consultation"
+REFPRIV="Difficulty in referring private insurance patients for specialty consultation"
+REFUNINS="Difficulty in referring uninsured patients for specialty consultation"
+RACER="Race recode"
+RACEETH="Race/Ethnicity"
+SPECR="Physician specialty recoded into 15 groups"
+SPECCAT="Physician specialty recoded into 3 groups"
+AGEDAYS="Age in days for patients less than one year"
+AGER="Age recode"
+DIAG1R="Diagnosis #1 - numeric recode"
+DIAG2R="Diagnosis #2 - numeric recode"
+DIAG3R="Diagnosis #3 - numeric recode"
+SCOPWI1R="Scope write-in #1 numeric recode"
+SCOPWI2R="Scope write-in #2 numeric recode"
+DIAGSC1R="All other diag/screening services #1 - numeric recode"
+DIAGSC2R="All other diag/screening services #2 - numeric recode"
+OTHPROC1R="Other procedure #1 - numeric recode"
+OTHPROC2R="Other procedure #2 - numeric recode"
+OTHPROC3R="Other procedure #3 - numeric recode"
+OTHPROC4R="Other procedure #4 - numeric recode"
+WHOCOMP="Who completed the Patient Record Forms?"
+SETTYPE="Setting type"
+YEAR="Year (2005)"
+CSTRATM="Clustered CSTRATM -- masked"
+CPSUM="Clustered CPSUM -- masked"
+PHYSWT="Physician visit weight"
+
+;
+
+FORMAT
+VMONTH VMONTHF.
+VDAYR VDAYRF.
+AGE AGEF.
+SEX SEXF.
+ETHNIC ETHNICF.
+RACE RACEF.
+USETOBAC USETOBAF.
+NOTOBAC NOTOBACF.
+PAYTYPE PAYTYPEF.
+RFV1
+RFV2
+RFV3 RFVF.
+RFV13D
+RFV23D
+RFV33D RFV3DF.
+PREGNANT PREGF.
+GESTWK GESTWKF.
+PRIMCARE BYESNOUF.
+REFER REFERF.
+SENBEFOR SENBEFOF.
+PASTVIS PASTVISF.
+MAJOR MAJORF.
+INJDET INJDETF.
+INJURY INJURYF.
+DIAG1 
+DIAG2
+DIAG3 $DIAGF.
+DIAG13D
+DIAG23D
+DIAG33D $DIAG3DF.
+PRDIAG1 
+PRDIAG2
+PRDIAG3 PRDIAGF.
+WTLB WTLBF.
+HTIN HTINF.
+DIAGSCRN 
+NOCHRON
+HEALTHED
+NONMED
+MED
+DIAGSCRF.
+DMP DMPF.
+ARTHRTIS
+ASTHMA
+CANCER
+CHF
+CRF
+COPD
+CEBVD
+HYPLIPID
+DEPRN
+DIABETES
+HTN
+IHD
+OBESITY
+OSTPRSIS
+PAYPRIV
+PAYMCARE
+PAYMCAID
+PAYWKCMP
+PAYSELF
+PAYNOCHG
+PAYOTH
+PAYDK
+BREAST
+PELVIC
+RECTAL
+SKIN
+DEPRESS
+ANYIMAGE
+BONEDENS
+MAMMO
+MRI
+ULTRASND
+XRAY
+OTHIMAGE
+CBC
+ELECTROL
+GLUCOSE
+HGBA
+CHOLEST
+PSA
+OTHERBLD
+BIOPSY
+CHLAMYD
+EKG
+PAP
+SCOPPROC
+SIGCOLON
+SPIRO
+URINE
+HTTAKE
+WTTAKE
+TEMPTAKE
+BLODPRES
+OTHDIAG
+ASTHMAED
+DIETNUTR
+EXERCISE
+GRWTHDEV
+INJPREV
+STRESMGT
+TOBACED
+WTREDUC
+OTHLTHED
+CAM
+DME
+HOMEHLTH
+PT
+HOSPICE
+SPOCTHER
+PSYCHOTH
+OTHMNTL
+EXCISION
+ORTHO
+WOUND
+OTHPROC NOYESF.
+SCOPEWI1    
+SCOPEWI2 $PROCF.
+SCPWI13D   
+SCPWI23D $PROC3DF. 
+SCPWI12D   
+SCPWI22D $PROC2DF.
+TEMPF TEMPFF.
+BMI BPSYS BPSYSF.
+BPDIAS BPDIASF.
+DIAGSC1
+DIAGSC2  $PROCF.   
+DIGSC13D
+DIGSC23D $PROC3DF.
+DIGSC12D   
+DIGSC22D $PROC2DF.
+OTHPROC1
+OTHPROC2
+OTHPROC3
+OTHPROC4 $PROCF.
+OTHPR13D  
+OTHPR23D 
+OTHPR33D 
+OTHPR43D $PROC3DF.
+OTHPR12D  
+OTHPR22D 
+OTHPR32D 
+OTHPR42D $PROC2DF.
+MED MEDF.
+MED1 
+MED2
+MED3 
+MED4 
+MED5 
+MED6
+MED7
+MED8 $MEDCODF.
+NCMED1
+NCMED2
+NCMED3
+NCMED4
+NCMED5
+NCMED6
+NCMED7
+NCMED8 NCMEDF.
+NODISP NODISPF.
+NOFU
+RETPRN 
+REFOTHMD
+RETAPPT
+TELEPHON 
+REFERED
+ADMITHOS 
+OTHDISP 
+NOPROVID   
+PHYS   
+RNLPN   
+NPNMW   
+PHYSASST
+OTHPROV  NOYESF.
+TIMEMD TIMEMDF.
+REGION REGIONF.
+MSA MSAF.
+SPEC $SPECF.
+SPECCAT SPECCATF.
+MDDO MDDOF.
+BDATEFL
+SEXFL
+ETHNICFL
+RACEFL
+SENBEFL
+PASTFL
+TIMEMDFL IMPUTF.
+GEN1 $GENCODF.
+PRESCR1 PRESCRF.
+CONTSUB1 CONTSUBF.
+COMSTAT1 COMSTATF.
+DRUG1CL1
+DRUG1CL2
+DRUG1CL3 $DRUGCLF.
+DRG1ING1 
+DRG1ING2
+DRG1ING3 
+DRG1ING4
+DRG1ING5 
+GEN2 $GENCODF.
+PRESCR2 PRESCRF.
+CONTSUB2 CONTSUBF.
+COMSTAT2 COMSTATF.
+DRUG2CL1
+DRUG2CL2
+DRUG2CL3 $DRUGCLF.
+DRG2ING1 
+DRG2ING2 
+DRG2ING3 
+DRG2ING4 
+DRG2ING5 
+GEN3 $GENCODF.
+PRESCR3 PRESCRF.
+CONTSUB3 CONTSUBF.
+COMSTAT3 COMSTATF.
+DRUG3CL1
+DRUG3CL2
+DRUG3CL3 $DRUGCLF.
+DRG3ING1 
+DRG3ING2 
+DRG3ING3 
+DRG3ING4 
+DRG3ING5 
+GEN4 $GENCODF.
+PRESCR4 PRESCRF.
+CONTSUB4 CONTSUBF.
+COMSTAT4 COMSTATF.
+DRUG4CL1
+DRUG4CL2
+DRUG4CL3 $DRUGCLF.
+DRG4ING1 
+DRG4ING2 
+DRG4ING3 
+DRG4ING4 
+DRG4ING5 
+GEN5 $GENCODF.
+PRESCR5 PRESCRF.
+CONTSUB5 CONTSUBF.
+COMSTAT5 COMSTATF.
+DRUG5CL1
+DRUG5CL2
+DRUG5CL3 $DRUGCLF.
+DRG5ING1 
+DRG5ING2
+DRG5ING3 
+DRG5ING4 
+DRG5ING5 
+GEN6 $GENCODF.
+PRESCR6 PRESCRF.
+CONTSUB6 CONTSUBF.
+COMSTAT6 COMSTATF.
+DRUG6CL1
+DRUG6CL2
+DRUG6CL3 $DRUGCLF.
+DRG6ING1 
+DRG6ING2 
+DRG6ING3                 
+DRG6ING4 
+DRG6ING5 $GENCODF.
+GEN7 $GENCODF.
+PRESCR7 PRESCRF.
+CONTSUB7 CONTSUBF.
+COMSTAT7 COMSTATF.
+DRUG7CL1
+DRUG7CL2
+DRUG7CL3 $DRUGCLF.
+DRG7ING1
+DRG7ING2
+DRG7ING3
+DRG7ING4
+DRG7ING5 $GENCODF.
+GEN8 $GENCODF.
+PRESCR8 PRESCRF.
+CONTSUB8 CONTSUBF.
+COMSTAT8 COMSTATF.
+DRUG8CL1
+DRUG8CL2
+DRUG8CL3 $DRUGCLF.
+DRG8ING1
+DRG8ING2
+DRG8ING3
+DRG8ING4
+DRG8ING5 $GENCODF.
+RETYPOFF  RETYPOF.
+SOLO  SOLOF.
+EMPSTAT  EMPSTATF.
+OWNS OWNSF.
+LAB  LABF.
+HOMVISR   
+HOSVISR   
+TELCONR   
+ECONR  ECONRF.
+EMEDREC EMEDRECF.
+EBILLREC EBILRECF.
+PRMCARER
+PRMAIDR
+PRPRVTR
+PROTHR PRMCAREF.
+MANCAREC MANCARCF.
+PRMANR PRMCAREF.
+ACEPTNEW
+CAPITATE
+NOCAP
+NMEDCARE
+NMEDCAID
+NWORKCMP
+NSELFPAY
+NNOCHRGE CAPITF.
+EDEMOG
+ECPOE
+ECTOE
+ERESULT
+ENNOTES
+EPNOTES
+EREMIND
+EPUBHLTH EDEMOGF.
+REFMDCAD
+REFMDCAR
+REFPRIV
+REFUNINS REFMDCAF.
+SETTYPE SETTYPF.
+TOTCHRON
+TOTDIAG
+TOTNONMED
+TOTHLTED 
+TOTF.
+RACER RACERF.
+SPECR SPECRF.
+AGEDAYS AGEDAYSF.
+AGER AGERF.
+WHOCOMP WHOCOMPF.
+RACEETH RACEETHF.
+;
+

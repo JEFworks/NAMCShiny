@@ -1,0 +1,455 @@
+          /* 
+
+PROGRAM: NAM09INP
+PURPOSE:  INPUT STATEMENT TO READ 2009 NAMCS PUBLIC USE FILE
+
+We recommend that you use a MISSOVER option in your INFILE statement.  Note that the
+value of LRECL may equal or exceed the actual file size.  We use a value of 9999 for
+convenience.
+
+EXAMPLE: INFILE [file reference] MISSOVER LRECL=9999;
+
+          */
+                
+INPUT
+@1     VMONTH           2.  /*Month of Visit                               */
+@3     VYEAR            4.  /*Year of Visit                                */
+@7     VDAYR            1.  /*Day of Week of Visit                         */
+@8     AGE              3.  /*Patient age in years:  Topcoded at 100       */
+@11    SEX              1.  /*Patient Sex                                  */
+@12    ETHUN            2.  /*Unimputed ethnicity                          */
+@14    RACEUN           2.  /*Unimputed race                               */
+@16    PAYPRIV          1.  /*Private insurance                            */
+@17    PAYMCARE         1.  /*Medicare                                     */
+@18    PAYMCAID         1.  /*Medicaid                                     */
+@19    PAYWKCMP         1.  /*Workers Compensation                         */
+@20    PAYSELF          1.  /*Self pay                                     */
+@21    PAYNOCHG         1.  /*No charge                                    */
+@22    PAYOTH           1.  /*Other                                        */
+@23    PAYDK            1.  /*Unknown                                      */
+@24    PAYTYPER         2.  /*Type of payment (recoded from multiple sources using hierarchy)*/
+@26    USETOBAC         2.  /*Tobacco use                                  */
+@28    INJDET           2.  /*Is visit related to injury/poisoning/adverse effect*/
+@30    INJURY           1.  /*Is visit related to injury? (recoded)        */
+@31    RFV1             5.  /*Reason for visit #1                          */
+@36    RFV2             5.  /*Reason for visit #2                          */
+@41    RFV3             5.  /*Reason for visit #3                          */
+@31    RFV13D           4.  /*Reason for visit #1 - 3 digit                */
+@36    RFV23D           4.  /*Reason for visit #2 - 3 digit                */
+@41    RFV33D           4.  /*Reason for visit #3 - 3 digit                */
+@46    PRIMCARE         2.  /*Are you the patient's primary care physician?*/
+@48    REFER            2.  /*Was patient referred for this visit?         */
+@50    SENBEFOR         1.  /*Have you or anyone in practice seen patient before?*/
+@51    PASTVIS          2.  /*If yes, how many visits in past 12 months?   */
+@53    MAJOR            2.  /*Major reason for visit                       */
+@55    DIAG1       $CHAR5.  /*Diagnosis #1-actual                          */
+@60    DIAG2       $CHAR5.  /*Diagnosis #2-actual                          */
+@65    DIAG3       $CHAR5.  /*Diagnosis #3-actual                          */
+@55    DIAG13D     $CHAR3.  /*Diagnosis #1-actual - 3 digit                */
+@60    DIAG23D     $CHAR3.  /*Diagnosis #2-actual - 3 digit                */
+@65    DIAG33D     $CHAR3.  /*Diagnosis #3-actual - 3 digit                */
+@70    PRDIAG1          2.  /*For dx1, is this probable, questionable, or ruleout?*/
+@72    PRDIAG2          2.  /*For dx2, is this probable, questionable, or ruleout?*/
+@74    PRDIAG3          2.  /*For dx3, is this probable, questionable, or ruleout?*/
+@76    ARTHRTIS         1.  /*Does patient now have - Arthritis            */
+@77    ASTHMA           1.  /*Does patient now have - Asthma               */
+@78    CANCER           1.  /*Does patient now have - Cancer               */
+@81    CEBVD            1.  /*Does patient now have - Cerebrovascular disease*/
+@82    CRF              1.  /*Does patient now have - Chronic renal failure*/
+@83    CHF              1.  /*Does patient now have - Congestive heart failure*/
+@84    COPD             1.  /*Does patient now have - COPD                 */
+@85    DEPRN            1.  /*Does patient now have - Depression           */
+@86    DIABETES         1.  /*Does patient now have - Diabetes             */
+@87    HYPLIPID         1.  /*Does patient now have - Hyperlipidemia       */
+@88    HTN              1.  /*Does patient now have - Hypertension         */
+@89    IHD              1.  /*Does patient now have - Ischemic heart disease*/
+@90    OBESITY          1.  /*Does patient now have - Obesity              */
+@91    OSTPRSIS         1.  /*Does patient now have - Osteoporosis         */
+@92    NOCHRON          1.  /*Does patient now have - None of the listed chronic conditons*/
+@93    TOTCHRON         2.  /*Total # of chronic conditions                */
+@95    HTIN             2.  /*Height in inches                             */
+@97    WTLB             3.  /*Weight in pounds                             */
+@100   BMI              6.  /*Body mass index -- calculated from height and weight*/
+@106   TEMPF            4.  /*Temperature measured in Farenheit            */
+@110   BPSYS            3.  /*Vital signs - Systolic blood pressure        */
+@113   BPDIAS           3.  /*Vital signs - Diastolic blood pressure       */
+@116   SERVICES         1.  /*Any screen/diag/non-med treatment services ordered/provided?*/
+@117   BREAST           1.  /*Breast exam                                  */
+@118   FOOT             1.  /*Foot exam                                    */
+@119   PELVIC           1.  /*Pelvic exam                                  */
+@120   RECTAL           1.  /*Rectal exam                                  */
+@121   RETINAL          1.  /*Retinal exam                                 */
+@122   SKIN             1.  /*Skin exam                                    */
+@123   DEPRESS          1.  /*Depression screening                         */
+@124   ANYIMAGE         1.  /*Any imaging                                  */
+@125   XRAY             1.  /*X-ray                                        */
+@126   BONEDENS         1.  /*Bone mineral density                         */
+@127   CATSCAN          1.  /*CT Scan                                      */
+@128   ECHOCARD         1.  /*Echocardiogram                               */
+@129   OTHULTRA         1.  /*Other ultrasound                             */
+@130   MAMMO            1.  /*Mammography                                  */
+@131   MRI              1.  /*MRI/CT/PET                                   */
+@132   OTHIMAGE         1.  /*Other imaging                                */
+@133   CBC              1.  /*CBC                                          */
+@134   GLUCOSE          1.  /*Glucose                                      */
+@135   HGBA             1.  /*HgbA1C                                       */
+@136   CHOLEST          1.  /*Lipids/Cholesterol                           */
+@137   PSA              1.  /*PSA test                                     */
+@138   OTHERBLD         1.  /*Other blood test                             */
+@139   BIOPSY           1.  /*Biopsy                                       */
+@140   CHLAMYD          1.  /*Chlamydia test                               */
+@141   EKG              1.  /*EKG/ECG (electrocardiogram)                  */
+@142   HIVTEST          1.  /*HIV test                                     */
+@143   HPVDNA           1.  /*HPV                                          */
+@144   PAPCONV          1.  /*Pap - Conventional                           */
+@145   PAPLIQ           1.  /*Pap - Liquid                                 */
+@146   PAPUNSP          1.  /*Pap - Unspecified                            */
+@147   PREGTEST         1.  /*Pregnancy test                               */
+@148   URINE            1.  /*Urinalysis                                   */
+@149   SIGCOLON         1.  /*Sigmoid/colonoscopy                          */
+@150   EXAM             1.  /*Recoded checkbox reflecting all ICD-9-CM exam codes*/
+@151   HTTAKE           1.  /*Height measured                              */
+@152   WTTAKE           1.  /*Weight measured                              */
+@153   TEMPTAKE         1.  /*Temperature taken                            */
+@154   BLODPRES         1.  /*Blood pressure taken                         */
+@155   CAM              1.  /*Complementary alternative medicine           */
+@156   DME              1.  /*Durable medical equipment                    */
+@157   HOMEHLTH         1.  /*Home health care                             */
+@158   PT               1.  /*Physical therapy                             */
+@160   SPOCTHER         1.  /*Speech/occupational therapy                  */
+@161   PSYCHOTH         1.  /*Psychotherapy                                */
+@162   OTHMNTL          1.  /*Other mental health counseling               */
+@163   EXCISION         1.  /*Excision                                     */
+@164   WOUND            1.  /*Wound care                                   */
+@165   CAST             1.  /*Cast                                         */
+@166   SPLINT           1.  /*Splint                                       */
+@167   OTHSERV          1.  /*Other (write-in) service ordered or provided */
+@168   PROC1       $CHAR4.  /*Procedure 1 - 4 digit                        */
+@172   PROC2       $CHAR4.  /*Procedure 2 - 4 digit                        */
+@176   PROC3       $CHAR4.  /*Procedure 3 - 4 digit                        */
+@180   PROC4       $CHAR4.  /*Procedure 4 - 4 digit                        */
+@184   PROC5       $CHAR4.  /*Procedure 5 - 4 digit                        */
+@188   PROC6       $CHAR4.  /*Procedure 6 - 4 digit                        */
+@192   PROC7       $CHAR4.  /*Procedure 7 - 4 digit                        */
+@196   PROC8       $CHAR4.  /*Procedure 8 - 4 digit                        */
+@200   PROC9       $CHAR4.  /*Procedure 9 - 4 digit                        */
+@168   PROC13D     $CHAR3.  /*Procedure 1 - 3 digit                        */
+@172   PROC23D     $CHAR3.  /*Procedure 2 - 3 digit                        */
+@176   PROC33D     $CHAR3.  /*Procedure 3 - 3 digit                        */
+@180   PROC43D     $CHAR3.  /*Procedure 4 - 3 digit                        */
+@184   PROC53D     $CHAR3.  /*Procedure 5 - 3 digit                        */
+@188   PROC63D     $CHAR3.  /*Procedure 6 - 3 digit                        */
+@192   PROC73D     $CHAR3.  /*Procedure 7 - 3 digit                        */
+@196   PROC83D     $CHAR3.  /*Procedure 8 - 3 digit                        */
+@200   PROC93D     $CHAR3.  /*Procedure 9 - 3 digit                        */
+@168   PROC12D     $CHAR2.  /*Procedure 1 - 2 digit                        */
+@172   PROC22D     $CHAR2.  /*Procedure 2 - 2 digit                        */
+@176   PROC32D     $CHAR2.  /*Procedure 3 - 2 digit                        */
+@180   PROC42D     $CHAR2.  /*Procedure 4 - 2 digit                        */
+@184   PROC52D     $CHAR2.  /*Procedure 5 - 2 digit                        */
+@188   PROC62D     $CHAR2.  /*Procedure 6 - 2 digit                        */
+@192   PROC72D     $CHAR2.  /*Procedure 7 - 2 digit                        */
+@196   PROC82D     $CHAR2.  /*Procedure 8 - 2 digit                        */
+@200   PROC92D     $CHAR2.  /*Procedure 9 - 2 digit                        */
+@204   TOTSERV          2.  /*Total # of screen/diag/nonmed treatment services ordered/provided*/
+@206   HEALTHED         1.  /*Was health education ordered or provided?    */
+@207   ASTHMAED         1.  /*Asthma education                             */
+@208   DIETNUTR         1.  /*Diet/nutrition                               */
+@209   EXERCISE         1.  /*Exercise                                     */
+@210   FAMPLAN          1.  /*Family planning/contraception                */
+@211   GRWTHDEV         1.  /*Growth/development                           */
+@212   INJPREV          1.  /*Injury prevention                            */
+@213   STRESMGT         1.  /*Stress management                            */
+@214   TOBACED          1.  /*Tobacco use/Exposure                         */
+@215   WTREDUC          1.  /*Weight reduction                             */
+@216   OTHLTHED         1.  /*Other health education                       */
+@217   TOTHLTED         2.  /*Total health education ordered or provided   */
+@219   MED              1.  /*Was medication prescribed, provided, continued?*/
+@220   MED1        $CHAR5.  /*Medication 1                                 */
+@225   MED2        $CHAR5.  /*Medication 2                                 */
+@230   MED3        $CHAR5.  /*Medication 3                                 */
+@235   MED4        $CHAR5.  /*Medication 4                                 */
+@240   MED5        $CHAR5.  /*Medication 5                                 */
+@245   MED6        $CHAR5.  /*Medication 6                                 */
+@250   MED7        $CHAR5.  /*Medication 7                                 */
+@255   MED8        $CHAR5.  /*Medication 8                                 */
+@260   NCMED1           2.  /*Was medication 1 new or continued?           */
+@262   NCMED2           2.  /*Was medication 2 new or continued?           */
+@264   NCMED3           2.  /*Was medication 3 new or continued?           */
+@266   NCMED4           2.  /*Was medication 4 new or continued?           */
+@268   NCMED5           2.  /*Was medication 5 new or continued?           */
+@270   NCMED6           2.  /*Was medication 6 new or continued?           */
+@272   NCMED7           2.  /*Was medication 7 new or continued?           */
+@274   NCMED8           2.  /*Was medication 8 new or continued?           */
+@276   NUMNEW           1.  /*Number of new medications coded              */
+@277   NUMCONT          1.  /*Number of continuing medications coded       */
+@278   NUMMED           1.  /*Number of medications coded                  */
+@279   NOPROVID         1.  /*No answer to provider item                   */
+@280   PHYS             1.  /*Physician seen                               */
+@281   PHYSASST         1.  /*Physician assistant seen                     */
+@282   NPNMW            1.  /*Nurse practitioner/Nurse midwife seen        */
+@283   RNLPN            1.  /*RN/LPN seen                                  */
+@284   MHP              1.  /*Mental health provider seen                  */
+@285   OTHPROV          1.  /*Other provider seen                          */
+@286   NODISP           1.  /*No answer to disposition item                */
+@287   REFOTHMD         1.  /*Refer to other physician                     */
+@288   RETAPPT          1.  /*Return, appt.                                */
+@289   ERADMHOS         1.  /*Refer to ED/Admit to hospital                */
+@290   OTHDISP          1.  /*Other disposition                            */
+@291   TIMEMD           3.  /*Time spent with MD                           */
+@294   PATWT            6.  /*Patient visit weight                         */
+@300   REGION           1.  /*Geographic region                            */
+@301   MSA              1.  /*MSA or non-MSA area                          */
+@305   MDDO             1.  /*MD or DO                                     */
+@306   PHYCODE          4.  /*Physician code                               */
+@310   PATCODE          3.  /*Patient code                                 */
+@313   BDATEFL          1.  /*Birth date imputed                           */
+@314   SEXFL            1.  /*Sex imputed                                  */
+@315   ETHNICFL         1.  /*Ethnicity imputed                            */
+@316   RACERFL          1.  /*White/Black/Other Race imputed               */
+@317   SENBEFL          1.  /*Seen before imputed                          */
+@318   PASTFL           1.  /*Number of past visits imputed                */
+@319   TIMEMDFL         1.  /*Time spent with MD imputed                   */
+@320   DRUGID1     $CHAR6.  /*Medication #1 - Drug ID                      */
+@326   PRESCR1          1.  /*Prescription status code                     */
+@327   CONTSUB1         1.  /*Controlled status code                       */
+@328   COMSTAT1         1.  /*Composition status code                      */
+@329   RX1CAT1     $CHAR3.  /*For RX1, MULTUM drug category #1 - detailed  */
+@332   RX1CAT2     $CHAR3.  /*For RX1, MULTUM drug category #2 - detailed  */
+@335   RX1CAT3     $CHAR3.  /*For RX1, MULTUM drug category #3 - detailed  */
+@338   RX1CAT4     $CHAR3.  /*For RX1, MULTUM drug category #4 - detailed  */
+@341   RX1V1C1     $CHAR3.  /*For RX1, level 1 of MULTUM drug category #1  */
+@344   RX1V1C2     $CHAR3.  /*For RX1, level 1 of MULTUM drug category #2  */
+@347   RX1V1C3     $CHAR3.  /*For RX1, level 1 of MULTUM drug category #3  */
+@350   RX1V1C4     $CHAR3.  /*For RX1, level 1 of MULTUM drug category #4  */
+@353   RX1V2C1     $CHAR3.  /*For RX1, level 2 of MULTUM drug category #1  */
+@356   RX1V2C2     $CHAR3.  /*For RX1, level 2 of MULTUM drug category #2  */
+@359   RX1V2C3     $CHAR3.  /*For RX1, level 2 of MULTUM drug category #3  */
+@362   RX1V2C4     $CHAR3.  /*For RX1, level 2 of MULTUM drug category #4  */
+@365   RX1V3C1     $CHAR3.  /*For RX1, level 3 of MULTUM drug category #1  */
+@368   RX1V3C2     $CHAR3.  /*For RX1, level 3 of MULTUM drug category #2  */
+@371   RX1V3C3     $CHAR3.  /*For RX1, level 3 of MULTUM drug category #3  */
+@374   RX1V3C4     $CHAR3.  /*For RX1, level 3 of MULTUM drug category #4  */
+@377   DRUGID2     $CHAR6.  /*Medication #2 - Drug ID                      */
+@383   PRESCR2          1.  /*Prescription status code                     */
+@384   CONTSUB2         1.  /*Controlled status code                       */
+@385   COMSTAT2         1.  /*Composition status code                      */
+@386   RX2CAT1     $CHAR3.  /*For RX2, MULTUM drug category #1 - detailed  */
+@389   RX2CAT2     $CHAR3.  /*For RX2, MULTUM drug category #2 - detailed  */
+@392   RX2CAT3     $CHAR3.  /*For RX2, MULTUM drug category #3 - detailed  */
+@395   RX2CAT4     $CHAR3.  /*For RX2, MULTUM drug category #4 - detailed  */
+@398   RX2V1C1     $CHAR3.  /*For RX2, level 1 of MULTUM drug category #1  */
+@401   RX2V1C2     $CHAR3.  /*For RX2, level 1 of MULTUM drug category #2  */
+@404   RX2V1C3     $CHAR3.  /*For RX2, level 1 of MULTUM drug category #3  */
+@407   RX2V1C4     $CHAR3.  /*For RX2, level 1 of MULTUM drug category #4  */
+@410   RX2V2C1     $CHAR3.  /*For RX2, level 2 of MULTUM drug category #1  */
+@413   RX2V2C2     $CHAR3.  /*For RX2, level 2 of MULTUM drug category #2  */
+@416   RX2V2C3     $CHAR3.  /*For RX2, level 2 of MULTUM drug category #3  */
+@419   RX2V2C4     $CHAR3.  /*For RX2, level 2 of MULTUM drug category #4  */
+@422   RX2V3C1     $CHAR3.  /*For RX2, level 3 of MULTUM drug category #1  */
+@425   RX2V3C2     $CHAR3.  /*For RX2, level 3 of MULTUM drug category #2  */
+@428   RX2V3C3     $CHAR3.  /*For RX2, level 3 of MULTUM drug category #3  */
+@431   RX2V3C4     $CHAR3.  /*For RX2, level 3 of MULTUM drug category #4  */
+@434   DRUGID3     $CHAR6.  /*Medication #3 - Drug ID                      */
+@440   PRESCR3          1.  /*Prescription status code                     */
+@441   CONTSUB3         1.  /*Controlled status code                       */
+@442   COMSTAT3         1.  /*Composition status code                      */
+@443   RX3CAT1     $CHAR3.  /*For RX3, MULTUM drug category #1 - detailed  */
+@446   RX3CAT2     $CHAR3.  /*For RX3, MULTUM drug category #2 - detailed  */
+@449   RX3CAT3     $CHAR3.  /*For RX3, MULTUM drug category #3 - detailed  */
+@452   RX3CAT4     $CHAR3.  /*For RX3, MULTUM drug category #4 - detailed  */
+@455   RX3V1C1     $CHAR3.  /*For RX3, level 1 of MULTUM drug category #1  */
+@458   RX3V1C2     $CHAR3.  /*For RX3, level 1 of MULTUM drug category #2  */
+@461   RX3V1C3     $CHAR3.  /*For RX3, level 1 of MULTUM drug category #3  */
+@464   RX3V1C4     $CHAR3.  /*For RX3, level 1 of MULTUM drug category #4  */
+@467   RX3V2C1     $CHAR3.  /*For RX3, level 2 of MULTUM drug category #1  */
+@470   RX3V2C2     $CHAR3.  /*For RX3, level 2 of MULTUM drug category #2  */
+@473   RX3V2C3     $CHAR3.  /*For RX3, level 2 of MULTUM drug category #3  */
+@476   RX3V2C4     $CHAR3.  /*For RX3, level 2 of MULTUM drug category #4  */
+@479   RX3V3C1     $CHAR3.  /*For RX3, level 3 of MULTUM drug category #1  */
+@482   RX3V3C2     $CHAR3.  /*For RX3, level 3 of MULTUM drug category #2  */
+@485   RX3V3C3     $CHAR3.  /*For RX3, level 3 of MULTUM drug category #3  */
+@488   RX3V3C4     $CHAR3.  /*For RX3, level 3 of MULTUM drug category #4  */
+@491   DRUGID4     $CHAR6.  /*Medication #4 - Drug ID                      */
+@497   PRESCR4          1.  /*Prescription status code                     */
+@498   CONTSUB4         1.  /*Controlled status code                       */
+@499   COMSTAT4         1.  /*Composition status code                      */
+@500   RX4CAT1     $CHAR3.  /*For RX4, MULTUM drug category #1 - detailed  */
+@503   RX4CAT2     $CHAR3.  /*For RX4, MULTUM drug category #2 - detailed  */
+@506   RX4CAT3     $CHAR3.  /*For RX4, MULTUM drug category #3 - detailed  */
+@509   RX4CAT4     $CHAR3.  /*For RX4, MULTUM drug category #4 - detailed  */
+@512   RX4V1C1     $CHAR3.  /*For RX4, level 1 of MULTUM drug category #1  */
+@515   RX4V1C2     $CHAR3.  /*For RX4, level 1 of MULTUM drug category #2  */
+@518   RX4V1C3     $CHAR3.  /*For RX4, level 1 of MULTUM drug category #3  */
+@521   RX4V1C4     $CHAR3.  /*For RX4, level 1 of MULTUM drug category #4  */
+@524   RX4V2C1     $CHAR3.  /*For RX4, level 2 of MULTUM drug category #1  */
+@527   RX4V2C2     $CHAR3.  /*For RX4, level 2 of MULTUM drug category #2  */
+@530   RX4V2C3     $CHAR3.  /*For RX4, level 2 of MULTUM drug category #3  */
+@533   RX4V2C4     $CHAR3.  /*For RX4, level 2 of MULTUM drug category #4  */
+@536   RX4V3C1     $CHAR3.  /*For RX4, level 3 of MULTUM drug category #1  */
+@539   RX4V3C2     $CHAR3.  /*For RX4, level 3 of MULTUM drug category #2  */
+@542   RX4V3C3     $CHAR3.  /*For RX4, level 3 of MULTUM drug category #3  */
+@545   RX4V3C4     $CHAR3.  /*For RX4, level 3 of MULTUM drug category #4  */
+@548   DRUGID5     $CHAR6.  /*Medication #5 - Drug ID                      */
+@554   PRESCR5          1.  /*Prescription status code                     */
+@555   CONTSUB5         1.  /*Controlled status code                       */
+@556   COMSTAT5         1.  /*Composition status code                      */
+@557   RX5CAT1     $CHAR3.  /*For RX5, MULTUM drug category #1 - detailed  */
+@560   RX5CAT2     $CHAR3.  /*For RX5, MULTUM drug category #2 - detailed  */
+@563   RX5CAT3     $CHAR3.  /*For RX5, MULTUM drug category #3 - detailed  */
+@566   RX5CAT4     $CHAR3.  /*For RX5, MULTUM drug category #4 - detailed  */
+@569   RX5V1C1     $CHAR3.  /*For RX5, level 1 of MULTUM drug category #1  */
+@572   RX5V1C2     $CHAR3.  /*For RX5, level 1 of MULTUM drug category #2  */
+@575   RX5V1C3     $CHAR3.  /*For RX5, level 1 of MULTUM drug category #3  */
+@578   RX5V1C4     $CHAR3.  /*For RX5, level 1 of MULTUM drug category #4  */
+@581   RX5V2C1     $CHAR3.  /*For RX5, level 2 of MULTUM drug category #1  */
+@584   RX5V2C2     $CHAR3.  /*For RX5, level 2 of MULTUM drug category #2  */
+@587   RX5V2C3     $CHAR3.  /*For RX5, level 2 of MULTUM drug category #3  */
+@590   RX5V2C4     $CHAR3.  /*For RX5, level 2 of MULTUM drug category #4  */
+@593   RX5V3C1     $CHAR3.  /*For RX5, level 3 of MULTUM drug category #1  */
+@596   RX5V3C2     $CHAR3.  /*For RX5, level 3 of MULTUM drug category #2  */
+@599   RX5V3C3     $CHAR3.  /*For RX5, level 3 of MULTUM drug category #3  */
+@602   RX5V3C4     $CHAR3.  /*For RX5, level 3 of MULTUM drug category #4  */
+@605   DRUGID6     $CHAR6.  /*Medication #6 - Drug ID                      */
+@611   PRESCR6          1.  /*Prescription status code                     */
+@612   CONTSUB6         1.  /*Controlled status code                       */
+@613   COMSTAT6         1.  /*Composition status code                      */
+@614   RX6CAT1     $CHAR3.  /*For RX6, MULTUM drug category #1 - detailed  */
+@617   RX6CAT2     $CHAR3.  /*For RX6, MULTUM drug category #2 - detailed  */
+@620   RX6CAT3     $CHAR3.  /*For RX6, MULTUM drug category #3 - detailed  */
+@623   RX6CAT4     $CHAR3.  /*For RX6, MULTUM drug category #4 - detailed  */
+@626   RX6V1C1     $CHAR3.  /*For RX6, level 1 of MULTUM drug category #1  */
+@629   RX6V1C2     $CHAR3.  /*For RX6, level 1 of MULTUM drug category #2  */
+@632   RX6V1C3     $CHAR3.  /*For RX6, level 1 of MULTUM drug category #3  */
+@635   RX6V1C4     $CHAR3.  /*For RX6, level 1 of MULTUM drug category #4  */
+@638   RX6V2C1     $CHAR3.  /*For RX6, level 2 of MULTUM drug category #1  */
+@641   RX6V2C2     $CHAR3.  /*For RX6, level 2 of MULTUM drug category #2  */
+@644   RX6V2C3     $CHAR3.  /*For RX6, level 2 of MULTUM drug category #3  */
+@647   RX6V2C4     $CHAR3.  /*For RX6, level 2 of MULTUM drug category #4  */
+@650   RX6V3C1     $CHAR3.  /*For RX6, level 3 of MULTUM drug category #1  */
+@653   RX6V3C2     $CHAR3.  /*For RX6, level 3 of MULTUM drug category #2  */
+@656   RX6V3C3     $CHAR3.  /*For RX6, level 3 of MULTUM drug category #3  */
+@659   RX6V3C4     $CHAR3.  /*For RX6, level 3 of MULTUM drug category #4  */
+@662   DRUGID7     $CHAR6.  /*Medication #7 - Drug ID                      */
+@668   PRESCR7          1.  /*Prescription status code                     */
+@669   CONTSUB7         1.  /*Controlled status code                       */
+@670   COMSTAT7         1.  /*Composition status code                      */
+@671   RX7CAT1     $CHAR3.  /*For RX7, MULTUM drug category #1 - detailed  */
+@674   RX7CAT2     $CHAR3.  /*For RX7, MULTUM drug category #2 - detailed  */
+@677   RX7CAT3     $CHAR3.  /*For RX7, MULTUM drug category #3 - detailed  */
+@680   RX7CAT4     $CHAR3.  /*For RX7, MULTUM drug category #4 - detailed  */
+@683   RX7V1C1     $CHAR3.  /*For RX7, level 1 of MULTUM drug category #1  */
+@686   RX7V1C2     $CHAR3.  /*For RX7, level 1 of MULTUM drug category #2  */
+@689   RX7V1C3     $CHAR3.  /*For RX7, level 1 of MULTUM drug category #3  */
+@692   RX7V1C4     $CHAR3.  /*For RX7, level 1 of MULTUM drug category #4  */
+@695   RX7V2C1     $CHAR3.  /*For RX7, level 2 of MULTUM drug category #1  */
+@698   RX7V2C2     $CHAR3.  /*For RX7, level 2 of MULTUM drug category #2  */
+@701   RX7V2C3     $CHAR3.  /*For RX7, level 2 of MULTUM drug category #3  */
+@704   RX7V2C4     $CHAR3.  /*For RX7, level 2 of MULTUM drug category #4  */
+@707   RX7V3C1     $CHAR3.  /*For RX7, level 3 of MULTUM drug category #1  */
+@710   RX7V3C2     $CHAR3.  /*For RX7, level 3 of MULTUM drug category #2  */
+@713   RX7V3C3     $CHAR3.  /*For RX7, level 3 of MULTUM drug category #3  */
+@716   RX7V3C4     $CHAR3.  /*For RX7, level 3 of MULTUM drug category #4  */
+@719   DRUGID8     $CHAR6.  /*Medication #8 - Drug ID                      */
+@725   PRESCR8          1.  /*Prescription status code                     */
+@726   CONTSUB8         1.  /*Controlled status code                       */
+@727   COMSTAT8         1.  /*Composition status code                      */
+@728   RX8CAT1     $CHAR3.  /*For RX8, MULTUM drug category #1 - detailed  */
+@731   RX8CAT2     $CHAR3.  /*For RX8, MULTUM drug category #2 - detailed  */
+@734   RX8CAT3     $CHAR3.  /*For RX8, MULTUM drug category #3 - detailed  */
+@737   RX8CAT4     $CHAR3.  /*For RX8, MULTUM drug category #4 - detailed  */
+@740   RX8V1C1     $CHAR3.  /*For RX8, level 1 of MULTUM drug category #1  */
+@743   RX8V1C2     $CHAR3.  /*For RX8, level 1 of MULTUM drug category #2  */
+@746   RX8V1C3     $CHAR3.  /*For RX8, level 1 of MULTUM drug category #3  */
+@749   RX8V1C4     $CHAR3.  /*For RX8, level 1 of MULTUM drug category #4  */
+@752   RX8V2C1     $CHAR3.  /*For RX8, level 2 of MULTUM drug category #1  */
+@755   RX8V2C2     $CHAR3.  /*For RX8, level 2 of MULTUM drug category #2  */
+@758   RX8V2C3     $CHAR3.  /*For RX8, level 2 of MULTUM drug category #3  */
+@761   RX8V2C4     $CHAR3.  /*For RX8, level 2 of MULTUM drug category #4  */
+@764   RX8V3C1     $CHAR3.  /*For RX8, level 3 of MULTUM drug category #1  */
+@767   RX8V3C2     $CHAR3.  /*For RX8, level 3 of MULTUM drug category #2  */
+@770   RX8V3C3     $CHAR3.  /*For RX8, level 3 of MULTUM drug category #3  */
+@773   RX8V3C4     $CHAR3.  /*For RX8, level 3 of MULTUM drug category #4  */
+@776   RETYPOFF         1.  /*Type of office setting                       */
+@777   SOLO             2.  /*Solo or group practice                       */
+@779   EMPSTAT          2.  /*Employment status of physician               */
+@781   OWNS             2.  /*Who owns this practice?                      */
+@783   PATEVEN          2.  /*Does physician see patients during evenings or weekends*/
+@785   NHVISR           2.  /*Did phys make nursing home visits during last normal week of practice?*/
+@787   HOMVISR          2.  /*Did phys make other home visits during last normal week of practice?*/
+@789   HOSVISR          2.  /*Did phys make hospital visits during last normal week of practice?*/
+@791   TELCONR          2.  /*Did physician do tel consults during last normal week of practice?*/
+@793   ECONR            2.  /*Did physician do email consults during last normal week of practice?*/
+@795   EBILLREC         2.  /*Does practice submit claims electronically?*/
+@797   EMEDREC          2.  /*Does practice use electronic medical or health records (not including billing records)?*/
+@799   EDEMOG           2.  /*Does practice have a computerized system for patient demographic information?*/
+@801   EPROLST          2.  /*If yes, does this include patient problem lists?*/
+@803   ECPOE            2.  /*Does practice have a computerized system for orders for prescriptions?*/
+@805   EWARN            2.  /*If yes, are there warnings of drug interactions/contradindications provided?*/
+@807   ESCRIP           2.  /*If yes, are prescriptions sent electronically to pharmacy?*/
+@809   ECTOE            2.  /*Does practice have a computerized system for orders for tests?*/
+@811   EORDER           2.  /*If yes, are orders sent electronically?*/
+@813   ERESULT          2.  /*Does practice have a computerized system for viewing lab results?*/
+@815   ERANGE           2.  /*If yes, are out of range levels highlighted? */
+@817   EIMGRES          2.  /*Does practice have a computerized system for viewing imaging results?*/
+@819   EIMAGE           2.  /*If yes, are electronic images returned?*/
+@821   EPNOTES          2.  /*Does practice have a computerized system for clinical notes?*/
+@823   EHXFU            2.  /*If yes, do they include medical history and follow up notes?*/
+@825   EREMIND          2.  /*Does practice have a computerized system for reminders for interventions/tests?*/
+@827   EPUBHLTH         2.  /*Does practice have a computerized system for public health reporting?*/
+@829   ENOTDIS          2.  /*If yes, are notifiable diseases sent electronically*/
+@831   EMRNEW           2.  /*Plans for installing new EMR/EHR system/replacing current system in next 3 years?*/
+@833   PRMCARER         2.  /*Percent of patient care revenue from Medicare*/
+@835   PRMAIDR          2.  /*Percent of patient care revenue from Medicaid*/
+@837   PRPRVTR          2.  /*Percent of patient care revenue from private insurance*/
+@839   PRPATR           2.  /*Percent of patient care revenue from patient payments*/
+@841   PROTHR           2.  /*Percent of patient care revenue from other sources*/
+@843   MANCAREC         2.  /*How many managed care contracts does this practice have?*/
+@845   PRMANR           2.  /*Percent of patient care revenue from managed care contracts*/
+@847   REVFFSR          2.  /*Percent of patient care revenue from usual, customary and reasonable fee-for-service*/
+@849   REVDISCR         2.  /*Percent of patient care revenue from discounted fee for service*/
+@851   REVCAPR          2.  /*Percent of patient care revenue from capitation*/
+@853   REVCASER         2.  /*Percent of patient care revenue from case rates*/
+@855   REVOTHR          2.  /*Percent of patient care revenue from other?*/
+@857   ACEPTNEW         2.  /*Is physician currently accepting new patients into practice*/
+@859   CAPITATE         2.  /*For new patients, physician accepts: Capitated private insurance*/
+@861   NOCAP            2.  /*For new patients, physician accepts: Non-capitated private insurance*/
+@863   NMEDCARE         2.  /*For new patients, physician accepts: Medicare*/
+@865   NMEDCAID         2.  /*For new patients, physician accepts: Medicaid*/
+@867   NWORKCMP         2.  /*For new patients, physician accepts: Worker's Compensation*/
+@869   NSELFPAY         2.  /*For new patients, physician accepts: self-pay*/
+@871   NNOCHRGE         2.  /*For new patients, physician accepts: no charge*/
+@873   SDAPPT           3.  /*Roughly, what percent of daily visits are same day appointments?*/
+@876   SASDAPPT         2.  /*Does practice set aside time for same day appointments?*/
+@878   APPTTIME         2.  /*On average, about how long to get an appt for routine medical exam?*/
+@880   CCS              2.  /*Do you offer any type of cervical cancer screening?*/
+@882   ETHIM            1.  /*Ethnicity (with missing values imputed)*/
+@883   RACER            1.  /*Race recode (with white/black/other imputed)*/
+@884   RACERETH         1.  /*Race/Ethnicity (ethnicity dominant recoding of RACER and RACERETH*/
+@885   SPECR            2.  /*Specialty recoded into tabulation strata*/
+@887   SPECCAT          1.  /*Physician specialty recoded into primary, surgical, medical*/
+@888   AGEDAYS          3.  /*Age in days for patients less than one year  */
+@891   AGER             1.  /*Age recode                                   */
+@892   DIAG1R           6.  /*Diagnosis #1 - numeric recode                */
+@898   DIAG2R           6.  /*Diagnosis #2 - numeric recode                */
+@904   DIAG3R           6.  /*Diagnosis #3 - numeric recode                */
+@910   PROC1R           4.  /*Proc #1 numeric recode                       */
+@914   PROC2R           4.  /*Proc #2 numeric recode                       */
+@918   PROC3R           4.  /*Proc #3 numeric recode                       */
+@922   PROC4R           4.  /*Proc #4 numeric recode                       */
+@926   PROC5R           4.  /*Proc #5 numeric recode                       */
+@930   PROC6R           4.  /*Proc #6 numeric recode                       */
+@934   PROC7R           4.  /*Proc #7 numeric recode                       */
+@938   PROC8R           4.  /*Proc #8 numeric recode                       */
+@942   PROC9R           4.  /*Proc #9 numeric recode                       */
+@946   WHOCOMP          2.  /*Who completed the Patient Record Forms?      */
+@948   SETTYPE          1.  /*Setting type                                 */
+@949   YEAR             4.  /*Year (2009)                                  */
+@953   CSTRATM          8.  /*Clustered CSTRATM -- masked                  */
+@961   CPSUM            6.  /*Clustered CPSUM --  masked                   */
+@967   PHYSWT           6.  /*Final visit file physician weight            */
+@973   PCTPOVR          2.  /*% pop below poverty level in patient's ZIP   */
+@975   HINCOMER         2.  /*Recoded median household income in patient's ZIP*/
+@977   PBAMORER         2.  /*% pop w/BA or higher in patient's ZIP        */
+@979   URBANRUR         2.  /*Urban-rural classification of patient's ZIP  */
+;
