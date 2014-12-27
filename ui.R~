@@ -38,7 +38,7 @@ shinyUI(fluidPage(
       h4("Plot for 2003 to 2010 Period"), 
       lineChartOutput("mychart"),
 
-      hr(),
+      br(),
 
       ## Window sliders
       h4("Smoothing"), 

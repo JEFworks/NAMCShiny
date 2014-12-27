@@ -4,15 +4,13 @@ library(zoo) ## for rollapply
 load('data/RFV.RData')
 
 # Define server logic
-shinyServer(function(input, output, session) {
+shinyServer(function(input, output) {
 
-    output$mychart <- renderLineChart({
         t <- as.data.frame(do.call(cbind, lapply(1:length(input$code), function(i) {
             ts <- mat[,4]==input$code[i]
             t <- rollapply(ts, width = input$window.size, by = input$window.jump, FUN = sum, align = "left") 
             return(t)       
         }))); colnames(t) <- code2name[input$code]
-         
-        t
-    })
+        
+        output$mychart <- renderLineChart({ t })
 })
