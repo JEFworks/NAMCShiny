@@ -18,7 +18,7 @@ shinyUI(fluidPage(
         a("Shiny app", href="http://shiny.rstudio.com/", target="_blank"),
         "as well as additional NAMCS data processed for R, please see:", 
         br(),
-        a("NAMCShiny on github", href="#", target="_blank")
+        a("NAMCShiny on github", href="https://github.com/JEFworks/NAMCShiny", target="_blank")
       )
     ),
     mainPanel(

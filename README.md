@@ -6,7 +6,7 @@ The National Ambulatory Medical Care Survey (NAMCS) is a national survey designe
 
 We encourage further exploration of NAMCS data to identify potential trends in public health and guide the development of future health policies.
 
-Known issues / TODO:
+### Known issues / TODO:
 - Change plot axis
 - Change time to reflect mean date for window
 - Checkbox options for / SQL query initial matrix by SEX, AGE MIN, AGE MAX, REGION, RACE, and others?
