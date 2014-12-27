@@ -1,6 +1,6 @@
 library(shiny)
 
-load('../data/RFV.RData')
+load('data/RFV.RData')
 
 # Define UI 
 shinyUI(fluidPage(

@@ -1,7 +1,7 @@
 library(shiny)
 library(zoo) ## for rollapply
 
-load('../data/RFV.RData')
+load('data/RFV.RData')
 
 # Define server logic
 shinyServer(function(input, output) {
