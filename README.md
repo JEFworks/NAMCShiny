@@ -9,4 +9,8 @@ We encourage further exploration of NAMCS data to identify potential trends in p
 ### Known issues / TODO:
 - Change plot axis
 - Change time to reflect mean date for window
-- Checkbox options for / SQL query initial matrix by SEX, AGE MIN, AGE MAX, REGION, RACE, and others?
+- If all all unchecked, then error results since empty df
+- Allow users to click SUBMIT button to prevent too many queries
+- Bug in y-axis of plot if too few counts?
+- User error if window size is more than number of entries?
+- User error if window jump > window size?

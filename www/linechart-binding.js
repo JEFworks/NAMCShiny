@@ -35,12 +35,12 @@ binding.renderValue = function(el, data) {
       .showXAxis(true);
       
     chart.xAxis     //Chart x-axis settings
-      .axisLabel('Time (ms)')
+      .axisLabel('Time')
       .tickFormat(d3.format(',r'));
  
     chart.yAxis     //Chart y-axis settings
-      .axisLabel('Voltage (v)')
-      .tickFormat(d3.format('.02f'));
+      .axisLabel('Frequency Count')
+      .tickFormat(d3.format('.00f'));
 
     nv.utils.windowResize(chart.update);
     
