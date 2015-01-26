@@ -3,10 +3,11 @@ library(shiny)
 # Define UI 
 shinyUI(navbarPage(
   title = "NAMCShiny",
-
-
+  
   tabPanel(
     title = "Plot",
+
+    h3("NAMCShiny is an interactive web application for visualizing health trends based on data from the 2003-2010 National Ambulatory Medical Care Survey (NAMCS). Explore trends and patterns in the reasons for medical visits for different patient demographic stratifications."),
     
     plotOutput("mychart"),
   
@@ -49,7 +50,7 @@ shinyUI(navbarPage(
             ),
             selected = 3
           )
-#           , selectInput('facet_row', 'Facet Row', c(None='.', Sex='SEX'))
+  #         , selectInput('facet_row', 'Facet Row', c(None='.', Sex='SEX'))
         )
       ),
       
@@ -83,27 +84,43 @@ shinyUI(navbarPage(
   
   tabPanel(
     title = "About",
+
+    h3("About NAMCShiny"),
   
     sidebarLayout(
       sidebarPanel(
-#         p("This ",
-#           a("Shiny", href="http://shiny.rstudio.com/", target="_blank" ),
-#           "app was created by:"
-#         ),
-#         p(a("Jean Fan", href="http://jefworks.com", target="_blank")),
-#         p(a("Kamil Slowikowski", href="http://slowkow.com", target="_blank")),
+        p("This ",
+          a("Shiny", href="http://shiny.rstudio.com/", target="_blank" ),
+          "app was created by:"
+        ),
+        div(
+	  img(src="http://custemized.org/img/team/jean_fan.jpg", height = 100, width=100, style='border-radius:50px'), 
+	  br(),
+	  a("Jean Fan", href="http://jefworks.com", target="_blank"),
+	  style = 'float:left; text-align:center'
+	),
+        div(
+	  img(src="http://custemized.org/img/team/kamil.jpg", height = 100, width=100 , style='border-radius:50px'),
+	  br(),
+	  a("Kamil Slowikowski", href="http://slowkow.com", target="_blank"),
+	  style = 'float:left; text-align:center'
+	),
+	div(style = 'clear: left;'), br(),
         p("Download the NAMCS data (formatted as ready-to-use .Rdata files) and read the source code at our github project:", 
           a("NAMCShiny",
             href="https://github.com/JEFworks/NAMCShiny",
             target="_blank"
           )
         )
-      ),
+      ), 
       mainPanel(
-        p("We created an interactive web application to make it easy to explore the reasons for medical visits in the 2003-2010 National Ambulatory Medical Care Survey (NAMCS) results."), 
-        
-        p("NAMCS is a national survey designed to meet the need for objective, reliable information about the provision and use of ambulatory medical care services in the United States. Results are based on a sample of visits to non-federal employed office-based physicians who are primarily engaged in direct patient care."),
-        
+        p("The National Ambulatory Medical Care Survey (NAMCS), is comprised of annual survey results from samples of patient visits to non-federal employed office-based physicians. The NAMCS data includes information such as patient demographics, reasons for the visit, any medications or therapies prescribed, and more. NAMCS public use data files are currently freely available for years 1973 to 2010 through", 
+ 	  a("the Center for Disease Control’s website", 
+	    href="ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NAMCS/",
+	    target="_blank"
+	  )
+	),
+	p("We developed NAMCShiny to allow you to easily explore and visualize trends in the reasons for medical visits for different patient demographic stratifications based on sex, race, ethnicity, and age."),
         p("We encourage you to explore the NAMCS data and find trends in public health. Our vision is that applications like this one have the potential to guide the development of future evidence-based health policies.")
       )
     )
