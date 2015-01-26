@@ -1,7 +1,5 @@
 library(shiny)
 
-load('data/dict.RData') # For code2name and name2code
-
 # Define UI 
 shinyUI(navbarPage(
   title = "NAMCShiny",
