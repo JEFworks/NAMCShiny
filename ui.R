@@ -3,125 +3,121 @@ library(shiny)
 load('data/dict.RData') # For code2name and name2code
 
 # Define UI 
-shinyUI(fluidPage(
+shinyUI(navbarPage(
+  title = "NAMCShiny",
+
+
+  tabPanel(
+    title = "Plot",
     
-  # Application title
-  titlePanel("NAMCShiny"),
-
-  h4("An interactive web application to explore the primary reason for medical visits based on the 2003-2010 National Ambulatory Medical Care Survey results"), 
-  br(),
-
-  # Descriptions
-  sidebarLayout(
-    sidebarPanel(
-      p("To download the data and code used in this",
-        a("Shiny app", href="http://shiny.rstudio.com/", target="_blank"),
-        "as well as additional NAMCS data processed for R, please see:", 
-        a("NAMCShiny on github", href="https://github.com/JEFworks/NAMCShiny", target="_blank")
-      )
-    ),
-    mainPanel(
-      p("The National Ambulatory Medical Care Survey (NAMCS) is a national survey designed to meet the need for objective, reliable information about the provision and use of ambulatory medical care services in the United States. Results are based on a sample of visits to non-federal employed office-based physicians who are primarily engaged in direct patient care."),
-      p("We encourage further exploration of NAMCS data to identify potential trends in public health and guide the development of future health policies.")
-    ),
-  ),
-
-  # Break
-  hr(),
-
-  # Main
-  fluidRow(
-
-    column(8,
-      # Main plot
-      h4("Plot for 2003 to 2010 Period"), 
-      lineChartOutput("mychart"),
-
-      hr(),
-
-      # Options
-      # Window sliders
-      h4("Smoothing"), 
-      wellPanel(   
-         fluidRow(
-            column(6,  
-              sliderInput("window.size", "Window Size:", min = 1, max = 10000, value = 5000)
-            ),
-            column(6,  
-               sliderInput("window.jump", "Window Jump:", min = 1, max = 5000, value = 500)
-            )
-         )
-      ),
-      # End Window Sliders
-      
-      # Age
-      h4("Age"), 
-      wellPanel(   
-         fluidRow(
-            column(6,  
-              sliderInput("age.min", "Min Age:", min = 0, max = 150, value = 0)
-            ),
-            column(6,  
-               sliderInput("age.max", "Max Age:", min = 0, max = 150, value = 150)
-            )
-         )
-      ),
-      # End Age
-
-      # Race 
-      h4("Race"), 
-      fluidRow(
-         wellPanel(   
-              checkboxGroupInput("race", NA, list(
-                "White Only" = '1',
-                "Black/African American only" = '2',
-                "Asian only" = '3',
-                "Native Hawaiian/Oth Pac Isl only" = '4',
-                "American Indian/Alaska Native only" = '5',
-                "More than one race reported" = '6', 
-                "Blank" = '-9'
-              ), selected=c('1','2','3','4','5','6','-9'))
-         )
-      ),
-      # End Race
-
-      h4("Ethnicity"), 
-      fluidRow(
-          wellPanel(
-              checkboxGroupInput("ethnic", NA, list(
-                "Hispanic or Latino" = '1',
-                "Not Hispanic or Latino" = '2', 
-                "Blank" = '-9'
-              ), selected=c('1','2','-9'))
-         )
-      ),
-      # End Ethnicity
-
-      # Sex
-      h4("Sex"), 
-      fluidRow(
-         wellPanel(  
-             checkboxGroupInput("sex", NA, list(
-                "Female" = '1',
-                "Male" = '2'
-             ), selected=c('1','2'))
-         )
-      )
-      # End Sex
+    plotOutput("mychart"),
+  
+    # Main
+    fluidRow(
+      column(
+        width = 4,
         
-    ),
-    # End column
-    
-    column(4,
-      # Reason for visit
-      h4("Primary Reason for Visit"), 
-      wellPanel(
-          checkboxGroupInput("code", NA, name2code, selected='14400')
+        h4("Reason for Visit"), 
+        selectInput('code', NA, name2code, selected = '14400',
+                    multiple = TRUE, selectize = TRUE),
+        
+        h4("Smoothing"),
+        wellPanel(
+          sliderInput("window.size", "Window Size (days):",
+                      min = 7, max = 365, value = 31),
+          sliderInput("window.step", "Window Step (days):",
+                      min = 7, max = 365, value = 7)
+        )
+      ),
+      
+      column(
+        width = 4,
+        
+        h4("Age"),
+        wellPanel(
+          sliderInput("age", NA, min = 0, max = 100, value = c(0, 100))
+        ),
+        
+        h4("Sex"), 
+        wellPanel(  
+  #         checkboxGroupInput("sex", NA, list(
+  #           "Female" = '1',
+  #           "Male" = '2'
+  #         ), selected = c('1','2'))
+          radioButtons("sex", NA, choices = list(
+              "Female and Male" = 3,
+              "Female" = 1,
+              "Male" = 2
+            ),
+            selected = 3
+          )
+#           , selectInput('facet_row', 'Facet Row', c(None='.', Sex='SEX'))
+        )
+      ),
+      
+      column(
+        width = 4,
+        
+        h4("Race"), 
+        wellPanel(   
+          checkboxGroupInput("race", NA, list(
+            "White Only" = '1',
+            "Black/African American only" = '2',
+            "Asian only" = '3',
+            "Native Hawaiian/Oth Pac Isl only" = '4',
+            "American Indian/Alaska Native only" = '5',
+            "More than one race reported" = '6', 
+            "Blank" = '-9'
+          ), selected=c('1','2','3','4','5','6','-9'))
+        ),
+  
+        h4("Ethnicity"), 
+        wellPanel(
+            checkboxGroupInput("ethnic", NA, list(
+              "Hispanic or Latino" = '1',
+              "Not Hispanic or Latino" = '2', 
+              "Blank" = '-9'
+            ), selected=c('1','2','-9'))
+        )
+      )
+    ) # End fluidRow
+  ),
+  
+  tabPanel(
+    title = "About",
+  
+    sidebarLayout(
+      sidebarPanel(
+#         p("This ",
+#           a("Shiny", href="http://shiny.rstudio.com/", target="_blank" ),
+#           "app was created by:"
+#         ),
+#         p(a("Jean Fan", href="http://jefworks.com", target="_blank")),
+#         p(a("Kamil Slowikowski", href="http://slowkow.com", target="_blank")),
+        p("Download the NAMCS data (formatted as ready-to-use .Rdata files) and read the source code at our github project:", 
+          a("NAMCShiny",
+            href="https://github.com/JEFworks/NAMCShiny",
+            target="_blank"
+          )
+        )
+      ),
+      mainPanel(
+        p("We created an interactive web application to make it easy to explore the reasons for medical visits in the 2003-2010 National Ambulatory Medical Care Survey (NAMCS) results."), 
+        
+        p("NAMCS is a national survey designed to meet the need for objective, reliable information about the provision and use of ambulatory medical care services in the United States. Results are based on a sample of visits to non-federal employed office-based physicians who are primarily engaged in direct patient care."),
+        
+        p("We encourage you to explore the NAMCS data and find trends in public health. Our vision is that applications like this one have the potential to guide the development of future evidence-based health policies.")
       )
     )
-    # End column
+  ),
 
+  tabPanel(
+    title = "Contact Us",
+    includeMarkdown("docs/contact-us.md")
+  ),
+
+  tabPanel(
+    title = "Data",
+    includeMarkdown("docs/data.md")
   )
-  # End Main
-
 ))
