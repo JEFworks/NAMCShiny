@@ -1,11 +1,10 @@
 library(shiny)
 library(zoo) # For rollapply().
-library(sqldf) # For sql querying.
 library(lubridate) # For datetime handling.
 library(dplyr) # For collapsing a dataframe by date.
-library(ggplot2)
-library(scales)
-library(reshape2)
+library(ggplot2) # For plotting.
+library(scales) # For specifying breaks in the plots.
+library(reshape2) # For collapsing dataframes.
 
 # Load a character vector of ReasonForVisit strings indexed by code numbers.
 # > code2name[1:3]
