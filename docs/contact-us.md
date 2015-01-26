@@ -1,5 +1,3 @@
-# Contact Us
-
 Please post questions, report issues, and request features at:
 <https://github.com/JEFworks/NAMCShiny/issues>
 
