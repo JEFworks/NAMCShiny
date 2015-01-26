@@ -1,11 +1,3 @@
-library(shiny)
-library(zoo) # For rollapply().
-library(lubridate) # For datetime handling.
-library(dplyr) # For collapsing a dataframe by date.
-library(ggplot2) # For plotting.
-library(scales) # For specifying breaks in the plots.
-library(reshape2) # For collapsing dataframes.
-
 #' Define server logic.
 #' @param input A list of items set by the input controls on the page.
 #' @param output A list of items displayed in the output DOM.

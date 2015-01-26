@@ -1,5 +1,3 @@
-library(shiny)
-
 # Define UI 
 shinyUI(navbarPage(
   title = "NAMCShiny",
@@ -93,7 +91,7 @@ shinyUI(navbarPage(
 #         p(a("Jean Fan", href="http://jefworks.com", target="_blank")),
 #         p(a("Kamil Slowikowski", href="http://slowkow.com", target="_blank")),
         p("Download the NAMCS data (formatted as ready-to-use .Rdata files) and read the source code at our github project:", 
-          a("NAMCShiny",
+          a("github.com/JEFworks/NAMCShiny",
             href="https://github.com/JEFworks/NAMCShiny",
             target="_blank"
           )
@@ -110,12 +108,13 @@ shinyUI(navbarPage(
   ),
 
   tabPanel(
-    title = "Contact Us",
-    includeMarkdown("docs/contact-us.md")
+    title = "Data",
+    includeMarkdown("docs/data.md")
   ),
 
   tabPanel(
-    title = "Data",
-    includeMarkdown("docs/data.md")
+    title = "Contact Us",
+    includeMarkdown("docs/contact-us.md")
   )
+
 ))
