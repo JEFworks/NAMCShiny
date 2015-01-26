@@ -1,6 +1,24 @@
-Title: NAMCShiny
-Author: Jean Fan <jeanfan@fas.harvard.edu>
+package: NAMCShiny
+Title: Explore Public Medical Data from NAMCS
+Description: An interactive Shiny app for exploring the reason for visits in
+    the publicly available National Ambulatory Medical Care Survey data from
+    2003-2010.
+Authors@R: as.person(c(
+        "Jean Fan <jeanfan@fas.harvard.edu> [aut, cre]", 
+        "Kamil Slowikowski <kslowikowski@fas.harvard.edu> [aut]"
+    ))
 AuthorUrl: http://JEFWorks.com
-License: MIT
+BugReports: https://github.com/JEFworks/NAMCShiny/issues
+License: MIT + file LICENSE
 Type: Shiny
-Tags: NAMCS interactive timecourse
+Tags: NAMCS, interactive, timecourse, Shiny
+Depends: R (>= 3.1.2)
+LazyData: true
+Imports:
+    dplyr (>= 0.3.0.2),
+    ggplot2 (>= 1.0.0),
+    lubridate (>= 1.3.3),
+    reshape2 (>= 1.4),
+    scales (>= 0.2.4),
+    shiny (>= 0.10.2.1),
+    zoo (>= 1.7-11)
