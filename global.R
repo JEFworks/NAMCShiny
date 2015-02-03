@@ -10,13 +10,13 @@ library(scales) # For specifying breaks in the plots.
 library(reshape2) # For collapsing dataframes.
 
 # Load a character vector of ReasonForVisit strings indexed by code numbers.
-load('data/dict.RData')
+load('data/merged_dict.RData')
 # > code2name[1:3]
 #         -9                         48000                         31000 
 #    "Blank"         "Progress visit, NOS" "General medical examination" 
 
 # Load a dataframe with patient information and ReasonForVisit code numbers.
-load('data/mat.RData')
+load('data/merged_filtered.RData')
 # > mat[1:5, ]
 #      VMONTH VYEAR VDAYR AGE SEX ETHNIC RACE  RFV1  RFV2 RFV3
 # 2854     12  2002     2  72   2      2    1 67000    -9   -9

@@ -40,7 +40,10 @@ mat.2003 <- mat
 lab.dict.2003 <- lab.dict
 for.dict.2003 <- for.dict
 
+######
 # Combine all data
+######
+
 require(plyr)
 mat <- rbind.fill(
     mat.2003,
@@ -57,29 +60,34 @@ mat <- rbind.fill(
 mat.ordered <- mat[order(mat[,'VYEAR'],mat[,'VMONTH'],mat[,'VDAYR'], decreasing=F),]
 mat <- mat.ordered
 
-# Fix to make data more consistent for some things
-mat[mat$RFV1 == 90000,'RFV1'] = -9
+# Fix to make reason for visit codes more consistent
+mat[mat$RFV1 == 90000,'RFV1'] = -9 
 mat[mat$RFV2 == 90000,'RFV2'] = -9
 mat[mat$RFV3 == 90000,'RFV3'] = -9
-mat[is.na(mat$RACE),'RACE'] = mat$RACEUN[is.na(mat$RACE)] # Substitute unimputed race
-mat[is.na(mat$ETHNIC),'ETHNIC'] = mat$ETHUN[is.na(mat$ETHNIC)] # Substitute unimputed ethnicity
+# Substitute unimputed race for consistency
+mat[is.na(mat$RACE),'RACE'] = mat$RACEUN[is.na(mat$RACE)] 
+# Substitute unimputed ethnicity for consistency
+mat[is.na(mat$ETHNIC),'ETHNIC'] = mat$ETHUN[is.na(mat$ETHNIC)] 
 
 # Save filtered and unfiltered versions
 mat.all <- as.data.frame(mat)
+save(mat.all, file='../data/merged.RData')
 mat <- as.data.frame(mat.all[, c('VMONTH', 'VYEAR', 'VDAYR', 'AGE', 'SEX', 'ETHNIC', 'RACE', 'RFV1', 'RFV2', 'RFV3')])
-save(mat, file='../data/mat.RData')
-save(mat.all, file='../data/mat_all.RData')
+save(mat, file='../data/merged_filtered.RData')
 
+######
 # Dictionaries
+######
+
 # Sort by frequency
 codes.freq <- sort(table(unlist(mat[,c('RFV1', 'RFV2', 'RFV3')])), decreasing=T)
 codes.order <- names(codes.freq)
-
+# Combine codes from 2010 and 2003; should be conserved
 code2name <- for.dict.2010['RFVF'][[1]][codes.order]
 na <- codes.order[is.na(code2name)]
 code2name[na] <- for.dict.2003['RFVF'][[1]][na]
 code2name <- code2name[codes.order]
-
 name2code <- names(code2name); names(name2code) <- code2name
 
-save(code2name, name2code, file='../data/dict.RData')
+# Save dictionaries
+save(code2name, name2code, file='../data/merged_dict.RData')

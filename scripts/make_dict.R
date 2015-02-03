@@ -1,3 +1,7 @@
+#' Make dictionary of label codes to descriptors
+#' Label codes comprise the column names in the data matrices
+#' @param path: path to folder containing nam*lab.txt
+#' @param year: data year
 make.lab.dict <- function(path, year) {
     text <- read.table(paste(path,'nam', year, 'lab.txt', sep=''), sep=';', strip.white=T, stringsAsFactors=F)[,1]
     lab <- do.call(rbind, lapply(1:length(text), function(i) {
@@ -9,6 +13,11 @@ make.lab.dict <- function(path, year) {
     return(lab.dict)
 }
 
+#' Make dictionary of value codes to descriptors for each label code
+#' Value codes comprise the matrix entries
+#' A set of value codes exist for each label code or matrix column
+#' @param path: path to folder containing nam*for.txt
+#' @param year: data year
 make.for.dict <- function(path, year) {
     text <- read.table(paste(path, 'nam', year, 'for.txt', sep=''), sep='\n', strip.white=T, stringsAsFactors=F)[,1]
     text <- paste(text, collapse='\n')[[1]]
@@ -37,3 +46,10 @@ make.for.dict <- function(path, year) {
     return(value.dict)
 }
 
+#' Sample runner to generate dictionaries for each year of the NAMCS data
+main <- function() {
+     path <- '../NAMCS/2003/'
+     year <- '03'
+     lab.dict <- make.lab.dict(path, year)
+     for.dict <- make.for.dict(path, year)
+}

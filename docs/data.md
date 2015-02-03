@@ -1,4 +1,4 @@
-## Contents
+### Contents
 
 -   Introduction
 
@@ -6,7 +6,7 @@
 
 -   Summary statistics describing the NAMCS data
 
-## Introduction
+### Introduction
 
 Read this tutorial to get started with the `.RData` files we have prepared for
 you.
@@ -16,7 +16,7 @@ converted it to a user-friendly format that you can use immediately.
 
 [1]: ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NAMCS/
 
-## Steps to get started with the NAMCS data
+### Steps to get started with the NAMCS data
 
 1.  Download and install [RStudio].
 
@@ -68,9 +68,9 @@ converted it to a user-friendly format that you can use immediately.
 
 [RStudio]: http://www.rstudio.com/products/rstudio/download/
 
-## Summary statistics describing the NAMCS data
+### Summary statistics describing the NAMCS data
 
-### Number of patients of each race and ethnicity
+#### Number of patients of each race and ethnicity
 
 ```{r}
 x = with(mat, table(RACE, ETHNIC))

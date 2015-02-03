@@ -1,3 +1,5 @@
+require(markdown)
+
 # Define UI 
 shinyUI(navbarPage(
   title = "NAMCShiny",
@@ -5,7 +7,9 @@ shinyUI(navbarPage(
   tabPanel(
     title = "Plot",
 
-    h3("NAMCShiny is an interactive web application for visualizing health trends based on data from the 2003-2010 National Ambulatory Medical Care Survey (NAMCS). Explore trends and patterns in the reasons for medical visits for different patient demographic stratifications."),
+    p("NAMCShiny is an interactive web application for visualizing health trends based on data from the 2003-2010 National Ambulatory Medical Care Survey (NAMCS). Explore trends and patterns in the reasons for medical visits for different patient demographic stratifications."),
+   
+    tags$hr(),
     
     plotOutput("mychart"),
   
@@ -104,7 +108,7 @@ shinyUI(navbarPage(
 	  style = 'float:left; text-align:center'
 	),
 	div(style = 'clear: left;'), br(),
-        p("Download the NAMCS data (formatted as ready-to-use .Rdata files) and read the source code at our github project:", 
+        p("Download the NAMCS data for 2003 to 2010 (formatted as ready-to-use .Rdata files) and read the source code at our github project:", 
           a("github.com/JEFworks/NAMCShiny",
             href="https://github.com/JEFworks/NAMCShiny",
             target="_blank"
