@@ -1,16 +1,7 @@
 # NAMCShiny
 
-## An interactive web application to explore the primary reason for medical visits based on the 2003-2010 National Ambulatory Medical Care Survey results
+## An interactive web application to explore health trends based on 2003-2010 National Ambulatory Medical Care Survey data
 
-The National Ambulatory Medical Care Survey (NAMCS) is a national survey designed to meet the need for objective, reliable information about the provision and use of ambulatory medical care services in the United States. Results are based on a sample of visits to non-federal employed office-based physicians who are primarily engaged in direct patient care.
+Big medical datasets are rapidly being generated and made publicly available, providing numerous opportunities for computational analysis and bioinformatics in health policy. Visual inspection and exploration of the data are useful for hypothesis generation and trend identification, though generating such visualizations is often time-consuming and cumbersome. Here, we present NAMCShiny, an interactive web application that allows users to visually inspect for trends in the reasons for medical visits from 2003 to 2010 while stratifying on patient demographic information such as sex, race, and age using data from the National Ambulatory Medical Care Survey. Big medical datasets are necessary to guide the development of future evidence-based health policies. However, forming meaningful interpretations of this data requires understanding and controlling for several key challenges and limitations including, but not limited to, biases, non-random sampling, confounders, and missing data.
 
-We encourage further exploration of NAMCS data to identify potential trends in public health and guide the development of future health policies.
-
-### Known issues / TODO:
-- Change plot axis
-- Change time to reflect mean date for window
-- If all all unchecked, then error results since empty df
-- Allow users to click SUBMIT button to prevent too many queries
-- Bug in y-axis of plot if too few counts?
-- User error if window size is more than number of entries?
-- User error if window jump > window size?
+We encourage further exploration of the NAMCS data to identify potential trends in public health and guide the development of future evidence-based health policies.

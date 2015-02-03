@@ -1,4 +1,10 @@
+#####
+# Merge 2003 to 2010 Reason for Visits for NAMCShiny application
+#####
+
+#####
 # Load
+#####
 
 load('../data/NAMCS2010.RData')
 mat.2010 <- mat
